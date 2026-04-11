@@ -2,12 +2,12 @@ export function TermsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-5xl mb-4">Terms of Service</h1>
+        <h1 className="text-5xl mb-4 text-black">Terms of Service</h1>
         <p className="text-gray-600 mb-8">Last updated: April 7, 2026</p>
 
         <div className="bg-white rounded-2xl p-8 shadow-sm space-y-8">
           <section>
-            <h2 className="text-2xl mb-4">1. Acceptance of Terms</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">1. Acceptance of Terms</h2>
             <p className="text-gray-700 leading-relaxed">
               By accessing and using CodeLearn's services, you accept and agree to be bound by these Terms of Service.
               If you do not agree to these terms, please do not use our services.
@@ -15,7 +15,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">2. Description of Service</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">2. Description of Service</h2>
             <p className="text-gray-700 leading-relaxed">
               CodeLearn provides an online learning platform offering courses, tutorials, and educational content
               in various technology subjects. We reserve the right to modify, suspend, or discontinue any part
@@ -24,7 +24,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">3. User Accounts</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">3. User Accounts</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               To access certain features, you must create an account. You agree to:
             </p>
@@ -38,7 +38,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">4. Acceptable Use</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">4. Acceptable Use</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               You agree not to:
             </p>
@@ -54,7 +54,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">5. Intellectual Property</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">5. Intellectual Property</h2>
             <p className="text-gray-700 leading-relaxed">
               All content on CodeLearn, including courses, text, graphics, logos, and software, is the property
               of CodeLearn or its licensors and is protected by copyright and intellectual property laws.
@@ -63,7 +63,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">6. Payment and Subscriptions</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">6. Payment and Subscriptions</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               For paid services:
             </p>
@@ -77,7 +77,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">7. Cancellation and Refunds</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">7. Cancellation and Refunds</h2>
             <p className="text-gray-700 leading-relaxed">
               You may cancel your subscription at any time. Cancellations take effect at the end of your current
               billing period. We offer refunds within 14 days of purchase if you're not satisfied with our service.
@@ -85,7 +85,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">8. Disclaimers</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">8. Disclaimers</h2>
             <p className="text-gray-700 leading-relaxed">
               Our services are provided "as is" without warranties of any kind. We do not guarantee that our
               services will be uninterrupted, secure, or error-free. We are not responsible for any employment
@@ -94,7 +94,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">9. Limitation of Liability</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">9. Limitation of Liability</h2>
             <p className="text-gray-700 leading-relaxed">
               To the maximum extent permitted by law, CodeLearn shall not be liable for any indirect, incidental,
               special, or consequential damages arising from your use of our services.
@@ -102,7 +102,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">10. Termination</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">10. Termination</h2>
             <p className="text-gray-700 leading-relaxed">
               We reserve the right to suspend or terminate your account if you violate these terms or engage
               in fraudulent or illegal activities. Upon termination, your right to access our services will
@@ -111,7 +111,7 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">11. Changes to Terms</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">11. Changes to Terms</h2>
             <p className="text-gray-700 leading-relaxed">
               We may modify these terms at any time. We will notify you of material changes via email or
               through our service. Continued use of our services after changes constitutes acceptance of
@@ -120,13 +120,13 @@ export function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">12. Contact Information</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">12. Contact Information</h2>
             <p className="text-gray-700 leading-relaxed">
               For questions about these terms, contact us at:
             </p>
             <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <p className="text-gray-700">Email: legal@codelearn.com</p>
-              <p className="text-gray-700">Address: 123 Learning Street, San Francisco, CA 94105</p>
+              <p className="text-gray-700">Email: sumitgiri15434@gmail.com</p>
+              {/* <p className="text-gray-700">Address: 123 Learning Street, San Francisco, CA 94105</p> */}
             </div>
           </section>
         </div>

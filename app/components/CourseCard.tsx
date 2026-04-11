@@ -41,7 +41,7 @@ export function CourseCard({ course }: CourseCardProps) {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-1">
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{course.rating}</span>
+            <span className="text-sm font-medium text-black">{course.rating}</span>
           </div>
           <span className={`px-3 py-1 rounded-full text-xs border ${difficultyColors[course.difficulty]}`}>
             {course.difficulty}
@@ -49,7 +49,7 @@ export function CourseCard({ course }: CourseCardProps) {
         </div>
 
         {/* Progress Bar (if exists) */}
-        {course.progress !== undefined && (
+        {/* {course.progress !== undefined && (
           <div className="mb-4">
             <div className="flex items-center justify-between text-sm mb-2">
               <span className="text-gray-600">Progress</span>
@@ -62,7 +62,7 @@ export function CourseCard({ course }: CourseCardProps) {
               ></div>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Action Button */}
         <div className="w-full bg-[#3A10E5] hover:bg-[#3A10E5]/90 text-white py-3 rounded-lg transition-all group-hover:scale-105 text-center">

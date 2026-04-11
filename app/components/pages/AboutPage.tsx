@@ -23,7 +23,7 @@ export default function AboutPage() {
             return (
               <div key={stat.label} className="bg-white rounded-xl p-6 text-center shadow-sm">
                 <Icon className="w-8 h-8 mx-auto mb-3 text-[#3A10E5]" />
-                <div className="text-3xl mb-1">{stat.value}</div>
+                <div className="text-3xl mb-1 text-gray-600">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             );
@@ -32,7 +32,7 @@ export default function AboutPage() {
 
         {/* Mission */}
         <div className="mb-16">
-          <h2 className="text-4xl mb-8 text-center">Our Mission</h2>
+          <h2 className="text-4xl mb-8 text-center text-black">Our Mission</h2>
           <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-sm">
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
               CodeLearn was founded in 2020 with a simple yet powerful vision: to democratize tech education
@@ -48,12 +48,12 @@ export default function AboutPage() {
 
         {/* Values */}
         <div className="mb-16">
-          <h2 className="text-4xl mb-8 text-center">Our Values</h2>
+          <h2 className="text-4xl mb-8 text-center text-black">Our Values</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {values.map((value) => (
               <div key={value.title} className="bg-white rounded-2xl p-8 shadow-sm">
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-2xl mb-3">{value.title}</h3>
+                <h3 className="text-2xl mb-3 text-gray-600">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}

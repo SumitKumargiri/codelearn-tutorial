@@ -2,12 +2,12 @@ export function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-5xl mb-4">Privacy Policy</h1>
+        <h1 className="text-5xl mb-4 text-black">Privacy Policy</h1>
         <p className="text-gray-600 mb-8">Last updated: April 7, 2026</p>
 
         <div className="bg-white rounded-2xl p-8 shadow-sm space-y-8">
           <section>
-            <h2 className="text-2xl mb-4">1. Information We Collect</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">1. Information We Collect</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               We collect information you provide directly to us when you create an account, enroll in courses,
               or interact with our platform. This includes:
@@ -22,7 +22,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">2. How We Use Your Information</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">2. How We Use Your Information</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               We use the information we collect to:
             </p>
@@ -37,7 +37,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">3. Information Sharing</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">3. Information Sharing</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               We do not sell your personal information. We may share your information only in these situations:
             </p>
@@ -51,7 +51,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">4. Data Security</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">4. Data Security</h2>
             <p className="text-gray-700 leading-relaxed">
               We implement appropriate technical and organizational measures to protect your personal information
               against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission
@@ -60,7 +60,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">5. Your Rights</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">5. Your Rights</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               You have the right to:
             </p>
@@ -75,7 +75,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">6. Cookies</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">6. Cookies</h2>
             <p className="text-gray-700 leading-relaxed">
               We use cookies and similar tracking technologies to collect information about your browsing activities
               and to personalize your experience. You can control cookies through your browser settings.
@@ -83,7 +83,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">7. Children's Privacy</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">7. Children's Privacy</h2>
             <p className="text-gray-700 leading-relaxed">
               Our services are not directed to children under 13. We do not knowingly collect personal information
               from children under 13. If you become aware that a child has provided us with personal information,
@@ -92,7 +92,7 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">8. Changes to This Policy</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">8. Changes to This Policy</h2>
             <p className="text-gray-700 leading-relaxed">
               We may update this privacy policy from time to time. We will notify you of any changes by posting
               the new policy on this page and updating the "Last updated" date.
@@ -100,13 +100,13 @@ export function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4">9. Contact Us</h2>
+            <h2 className="text-2xl mb-4 text-gray-600">9. Contact Us</h2>
             <p className="text-gray-700 leading-relaxed">
               If you have questions about this privacy policy, please contact us at:
             </p>
             <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <p className="text-gray-700">Email: privacy@codelearn.com</p>
-              <p className="text-gray-700">Address: 123 Learning Street, San Francisco, CA 94105</p>
+              <p className="text-gray-700">Email: sumitgiri15434@gmail.com</p>
+              {/* <p className="text-gray-700">Address: 123 Learning Street, San Francisco, CA 94105</p> */}
             </div>
           </section>
         </div>

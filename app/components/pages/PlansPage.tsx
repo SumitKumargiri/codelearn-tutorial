@@ -32,10 +32,10 @@ export default function PlansPage() {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl mb-2">{plan.name}</h3>
+                <h3 className="text-2xl mb-2 text-black">{plan.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
                 <div className="mb-2">
-                  <span className="text-4xl">{plan.price}</span>
+                  <span className="text-4xl text-gray-600">{plan.price}</span>
                   <span className="text-gray-600 ml-2">/ {plan.period}</span>
                 </div>
               </div>
@@ -80,12 +80,12 @@ export default function PlansPage() {
 
         {/* FAQs */}
         <div>
-          <h2 className="text-3xl text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-3xl text-center mb-12 text-black">Frequently Asked Questions</h2>
 
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg mb-2">{faq.question}</h3>
+                <h3 className="text-lg mb-2 text-gray-600">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             ))}

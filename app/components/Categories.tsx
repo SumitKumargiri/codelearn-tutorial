@@ -17,7 +17,7 @@ export function Categories() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl mb-4">Explore by Category</h2>
+          <h2 className="text-4xl mb-4 text-black">Explore by Category</h2>
           <p className="text-gray-600 text-lg">Choose from hundreds of courses across different technologies</p>
         </div>
 
@@ -33,7 +33,7 @@ export function Categories() {
                 <div className={`${category.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="mb-1">{category.name}</h3>
+                <h3 className="mb-1 text-black">{category.name}</h3>
                 <p className="text-sm text-gray-500">{category.count} courses</p>
               </Link>
             );

@@ -1,6 +1,8 @@
 import { Menu, Search, User, Bell } from 'lucide-react';
 import Link from 'next/link';
 import { ROUTES } from '../utils/lib/routes';
+import logo from "../../public/logo1.png";
+import Image from "next/image";
 
 export function Header() {
   return (
@@ -9,8 +11,20 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-8">
-            <Link href={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+            {/* <Link href={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
               <div className="w-8 h-8 bg-gradient-to-br from-[#3A10E5] to-[#6C5CE7] rounded"></div>
+              <span className="font-semibold text-xl">CodeLearn</span>
+            </Link> */}
+            <Link href={ROUTES.HOME}
+              className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            >
+              <Image
+                src={logo}
+                alt="CodeLearn Logo"
+                width={32}
+                height={32}
+                className="rounded"
+              />
               <span className="font-semibold text-xl">CodeLearn</span>
             </Link>
 
@@ -19,7 +33,7 @@ export function Header() {
               <Link href={ROUTES.CATALOG} className="hover:text-[#FFD300] transition-colors">Catalog</Link>
               <Link href={ROUTES.RESOURCES} className="hover:text-[#FFD300] transition-colors">Resources</Link>
               <Link href={ROUTES.COMMUNITY} className="hover:text-[#FFD300] transition-colors">Community</Link>
-              <Link href={ROUTES.PLANS} className="hover:text-[#FFD300] transition-colors">Plans</Link>
+              {/* <Link href={ROUTES.PLANS} className="hover:text-[#FFD300] transition-colors">Plans</Link> */}
             </nav>
           </div>
 

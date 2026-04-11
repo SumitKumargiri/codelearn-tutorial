@@ -72,7 +72,7 @@ export default function CareersPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Benefits */}
         <div className="mb-16">
-          <h2 className="text-4xl mb-8 text-center">Why Join Us?</h2>
+          <h2 className="text-4xl mb-8 text-center text-black">Why Join Us?</h2>
           <div className="bg-white rounded-2xl p-8 shadow-sm">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit) => (
@@ -87,7 +87,7 @@ export default function CareersPage() {
 
         {/* Open Positions */}
         <div>
-          <h2 className="text-4xl mb-8 text-center">Open Positions</h2>
+          <h2 className="text-4xl mb-8 text-center text-black">Open Positions</h2>
           <p className="text-center text-gray-600 mb-8">{openPositions.length} positions available</p>
 
           <div className="space-y-4">
@@ -98,7 +98,7 @@ export default function CareersPage() {
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="text-xl mb-2">{position.title}</h3>
+                    <h3 className="text-xl mb-2 text-gray-600">{position.title}</h3>
                     <p className="text-gray-600 mb-3">{position.description}</p>
 
                     <div className="flex flex-wrap gap-4 text-sm text-gray-600">

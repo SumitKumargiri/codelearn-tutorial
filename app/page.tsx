@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl mb-2">Popular Courses</h2>
+              <h2 className="text-4xl mb-2 text-black">Popular Courses</h2>
               <p className="text-gray-600 text-lg">Start your learning journey with our most loved courses</p>
             </div>
             <button className="hidden md:block px-6 py-3 border border-gray-300 rounded-lg hover:border-[#3A10E5] hover:text-[#3A10E5] transition-colors">
@@ -107,7 +107,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl mb-6">Ready to start your coding journey?</h2>
+          <h2 className="text-4xl mb-6 text-black">Ready to start your coding journey?</h2>
           <p className="text-xl text-gray-600 mb-8">
             Join millions of learners and start building your future today. Free to get started, upgrade anytime.
           </p>
@@ -115,7 +115,7 @@ export default function HomePage() {
             <button className="bg-[#3A10E5] hover:bg-[#3A10E5]/90 text-white px-8 py-4 rounded-lg transition-all hover:scale-105">
               Get Started for Free
             </button>
-            <button className="border border-gray-300 hover:border-[#3A10E5] hover:text-[#3A10E5] px-8 py-4 rounded-lg transition-colors">
+            <button className="border border-gray-300 hover:border-[#3A10E5] hover:text-[#3A10E5] px-8 py-4 rounded-lg transition-colors text-black">
               Explore Plans
             </button>
           </div>

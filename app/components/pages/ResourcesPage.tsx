@@ -23,7 +23,7 @@ export default function ResourcesPage() {
                   <div className={`${resource.color} w-12 h-12 rounded-lg flex items-center justify-center`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl">{resource.category}</h2>
+                  <h2 className="text-2xl text-black">{resource.category}</h2>
                 </div>
 
                 <div className="space-y-4">
@@ -35,7 +35,7 @@ export default function ResourcesPage() {
                     >
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
-                          <h3 className="font-semibold mb-1 group-hover:text-[#3A10E5] transition-colors">
+                          <h3 className="font-semibold mb-1 text-gray-600 group-hover:text-[#3A10E5] transition-colors">
                             {item.title}
                           </h3>
                           <p className="text-sm text-gray-600">{item.description}</p>

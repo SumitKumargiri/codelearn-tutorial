@@ -85,7 +85,7 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl mb-2">Popular Courses</h2>
+              <h2 className="text-4xl mb-2 text-black">Popular Courses</h2>
               <p className="text-gray-600 text-lg">Start your learning journey with our most loved courses</p>
             </div>
             <button className="hidden md:block px-6 py-3 border border-gray-300 rounded-lg hover:border-[#3A10E5] hover:text-[#3A10E5] transition-colors">

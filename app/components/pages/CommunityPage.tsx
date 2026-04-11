@@ -24,7 +24,7 @@ export default function CommunityPage() {
             return (
               <div key={stat.label} className="bg-white rounded-xl p-6 text-center shadow-sm">
                 <Icon className="w-8 h-8 mx-auto mb-3 text-[#3A10E5]" />
-                <div className="text-3xl mb-1">{stat.value}</div>
+                <div className="text-3xl mb-1 text-gray-600">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             );
@@ -35,7 +35,7 @@ export default function CommunityPage() {
           {/* Discussions */}
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-3xl">Trending Discussions</h2>
+              <h2 className="text-3xl text-black">Trending Discussions</h2>
               <button className="text-[#3A10E5] hover:underline">View All</button>
             </div>
 
@@ -50,7 +50,7 @@ export default function CommunityPage() {
                       <span className="text-xs px-3 py-1 bg-[#3A10E5]/10 text-[#3A10E5] rounded-full">
                         {discussion.category}
                       </span>
-                      <h3 className="text-lg mt-2 hover:text-[#3A10E5] transition-colors">
+                      <h3 className="text-lg mt-2 text-[#3613c1] hover:text-[#3A10E5] transition-colors">
                         {discussion.title}
                       </h3>
                     </div>
@@ -79,7 +79,7 @@ export default function CommunityPage() {
 
           {/* Upcoming Events */}
           <div className="lg:col-span-1">
-            <h2 className="text-3xl mb-6">Upcoming Events</h2>
+            <h2 className="text-3xl mb-6 text-black">Upcoming Events</h2>
 
             <div className="space-y-4">
               {upcomingEvents.map((event) => (
@@ -92,7 +92,7 @@ export default function CommunityPage() {
                       <Calendar className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">{event.title}</h3>
+                      <h3 className="font-semibold mb-1 text-[#3613c1]">{event.title}</h3>
                       <p className="text-sm text-gray-600">{event.date}</p>
                       <p className="text-sm text-gray-600">{event.time}</p>
                     </div>

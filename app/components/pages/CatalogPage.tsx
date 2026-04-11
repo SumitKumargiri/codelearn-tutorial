@@ -98,7 +98,7 @@ export default function CatalogPage() {
               <input
                 type="text"
                 placeholder="Search for courses..."
-                className="w-full pl-12 pr-4 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full pl-12 pr-4 py-4 border-1 placeholder-white border-white rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               />
             </div>
           </div>
