@@ -1,9 +1,10 @@
-import { Categories } from "./components/Categories";
-import { CourseCard } from "./components/CourseCard";
-import { Hero } from "./components/Hero";
-import { Stats } from "./components/Stats";
+"use client";
 
-const courses = [
+import { CourseCard } from '../CourseCard';
+import { Search } from 'lucide-react';
+import { useState } from 'react';
+
+const allCourses = [
   {
     id: 'javascript-fundamentals',
     title: 'JavaScript Fundamentals',
@@ -75,52 +76,67 @@ const courses = [
   }
 ];
 
-export default function HomePage() {
+export default function CatalogPage() {
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
+
+  const filteredCourses = selectedDifficulty === 'All'
+    ? allCourses
+    : allCourses.filter(course => course.difficulty === selectedDifficulty);
+
   return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-
-      {/* Course Section */}
-      <section className="py-16">
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-[#3A10E5] to-[#5B21B6] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-4xl mb-2">Popular Courses</h2>
-              <p className="text-gray-600 text-lg">Start your learning journey with our most loved courses</p>
-            </div>
-            <button className="hidden md:block px-6 py-3 border border-gray-300 rounded-lg hover:border-[#3A10E5] hover:text-[#3A10E5] transition-colors">
-              View All Courses
-            </button>
-          </div>
+          <h1 className="text-5xl mb-4">Course Catalog</h1>
+          <p className="text-xl opacity-90 mb-8">Explore all our courses and start learning today</p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+          {/* Search Bar */}
+          <div className="max-w-2xl">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search for courses..."
+                className="w-full pl-12 pr-4 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Filters */}
+        <div className="mb-8 flex items-center gap-4">
+          <span className="font-semibold">Filter by:</span>
+          <div className="flex gap-2">
+            {['All', 'Beginner', 'Intermediate', 'Advanced'].map((level) => (
+              <button
+                key={level}
+                onClick={() => setSelectedDifficulty(level)}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  selectedDifficulty === level
+                    ? 'bg-[#3A10E5] text-white'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:border-[#3A10E5]'
+                }`}
+              >
+                {level}
+              </button>
             ))}
           </div>
         </div>
-      </section>
 
-      <Categories />
-      <Stats />
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl mb-6">Ready to start your coding journey?</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Join millions of learners and start building your future today. Free to get started, upgrade anytime.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#3A10E5] hover:bg-[#3A10E5]/90 text-white px-8 py-4 rounded-lg transition-all hover:scale-105">
-              Get Started for Free
-            </button>
-            <button className="border border-gray-300 hover:border-[#3A10E5] hover:text-[#3A10E5] px-8 py-4 rounded-lg transition-colors">
-              Explore Plans
-            </button>
-          </div>
+        {/* Courses Grid */}
+        <div className="mb-6">
+          <p className="text-gray-600">{filteredCourses.length} courses found</p>
         </div>
-      </section>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredCourses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
+        </div>
+      </div>
 
     </div>
   );

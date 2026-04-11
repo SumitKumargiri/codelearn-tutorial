@@ -1,7 +1,7 @@
-import { Categories } from "./components/Categories";
-import { CourseCard } from "./components/CourseCard";
-import { Hero } from "./components/Hero";
-import { Stats } from "./components/Stats";
+import { Hero } from '../Hero';
+import { Categories } from '../Categories';
+import { CourseCard } from '../CourseCard';
+import { Stats } from '../Stats';
 
 const courses = [
   {
@@ -75,7 +75,7 @@ const courses = [
   }
 ];
 
-export default function HomePage() {
+export function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Hero />
