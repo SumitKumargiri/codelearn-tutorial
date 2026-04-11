@@ -19,17 +19,18 @@ export function Header() {
               className="flex items-center gap-2 hover:opacity-90 transition-opacity"
             >
               <Image
-                src={logo}
+                src={logo.src}
                 alt="CodeLearn Logo"
-                width={32}
+                width={44}
                 height={32}
                 className="rounded"
               />
-              <span className="font-semibold text-xl">CodeLearn</span>
+              {/* <span className="font-semibold text-xl">CodeLearn</span> */}
             </Link>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-6">
+              <Link href={ROUTES.HOME} className="hover:text-[#FFD300] transition-colors">Home</Link>
               <Link href={ROUTES.CATALOG} className="hover:text-[#FFD300] transition-colors">Catalog</Link>
               <Link href={ROUTES.RESOURCES} className="hover:text-[#FFD300] transition-colors">Resources</Link>
               <Link href={ROUTES.COMMUNITY} className="hover:text-[#FFD300] transition-colors">Community</Link>
