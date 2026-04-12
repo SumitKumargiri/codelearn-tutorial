@@ -1,6 +1,6 @@
 import { Menu, Search, User, Bell } from 'lucide-react';
 import Link from 'next/link';
-import { ROUTES } from '../utils/lib/routes';
+import { ROUTES } from '../utils/routes';
 import logo from "../../public/logo1.png";
 import Image from "next/image";
 
@@ -15,16 +15,8 @@ export function Header() {
               <div className="w-8 h-8 bg-gradient-to-br from-[#3A10E5] to-[#6C5CE7] rounded"></div>
               <span className="font-semibold text-xl">CodeLearn</span>
             </Link> */}
-            <Link href={ROUTES.HOME}
-              className="flex items-center gap-2 hover:opacity-90 transition-opacity"
-            >
-              <Image
-                src={logo.src}
-                alt="CodeLearn Logo"
-                width={44}
-                height={32}
-                className="rounded"
-              />
+            <Link href={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-90 transition-opacity" >
+              <Image src={logo.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               {/* <span className="font-semibold text-xl">CodeLearn</span> */}
             </Link>
 

@@ -1,36 +1,46 @@
 // import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 import Link from 'next/link';
-import { ROUTES } from '../utils/lib/routes';
+import { ROUTES } from '../utils/routes';
+import logo from "../../public/logo1.png";
+import facebook from "../../public/facebook.png";
+import twitter from "../../public/twitter.png";
+import instagram from "../../public/instagram.png";
+import linkdin from "../../public/linkdin.png";
+import youtube from "../../public/youtube.png";
+import Image from "next/image";
 
 export function Footer() {
   return (
     <footer className="bg-[#10162F] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href={ROUTES.HOME} className="flex items-center gap-2 mb-4 w-fit hover:opacity-90 transition-opacity">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#3A10E5] to-[#6C5CE7] rounded"></div>
-              <span className="font-semibold text-xl">CodeLearn</span>
+            <Link href={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-90 transition-opacity" >
+              <Image src={logo.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
+              {/* <span className="font-semibold text-xl">CodeLearn</span> */}
             </Link>
             <p className="text-gray-400 mb-6">
               Empowering millions to learn coding and tech skills through hands-on, interactive learning experiences.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
-                {/* <Facebook className="w-5 h-5" /> */}
+                <Image src={facebook.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Twitter className="w-5 h-5" /> */}
+                <Image src={twitter.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Instagram className="w-5 h-5" /> */}
+                <Image src={instagram.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Linkedin className="w-5 h-5" /> */}
+                <Image src={linkdin.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Youtube className="w-5 h-5" /> */}
+                <Image src={youtube.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
             </div>
           </div>

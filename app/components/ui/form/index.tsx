@@ -1,5 +1,5 @@
 import React, { ReactNode, RefObject, useState } from "react";
-import { Form } from "@/components/ui/form";
+import { Form } from "@/app/components/ui/form";
 import { FieldValues, UseFormReturn } from "react-hook-form";
 
 interface Props<T extends FieldValues, actionParamsType = any>

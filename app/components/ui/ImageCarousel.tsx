@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel";
+} from "@/app/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
 interface ImageCarouselProps {
