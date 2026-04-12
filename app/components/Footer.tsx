@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ROUTES } from '../utils/routes';
 import logo from "../../public/logo1.png";
 import facebook from "../../public/facebook.png";
-import twitter from "../../public/twitter.png";
+import twitter from "../../public/twitterx.png";
 import instagram from "../../public/instagram.png";
 import linkdin from "../../public/linkdin.png";
 import youtube from "../../public/youtube.png";
