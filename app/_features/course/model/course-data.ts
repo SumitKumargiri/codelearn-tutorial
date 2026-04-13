@@ -15,6 +15,15 @@ export interface Module {
   lessons: Lesson[];
 }
 
+export interface Document {
+  id: number;
+  title: string;
+  type: 'pdf' | 'slides' | 'code' | 'notes' | 'worksheet';
+  size: string;
+  downloadUrl: string;
+  description: string;
+}
+
 export interface CourseData {
   id: string;
   title: string;
@@ -28,6 +37,7 @@ export interface CourseData {
   overview: string;
   skills: string[];
   modules: Module[];
+  documents: Document[];
 }
 
 export const coursesData: Record<string, CourseData> = {
@@ -43,6 +53,56 @@ export const coursesData: Record<string, CourseData> = {
     color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
     overview: 'This comprehensive course will teach you JavaScript from the ground up. You\'ll learn core concepts through interactive exercises and real-world projects. Perfect for absolute beginners with no prior programming experience.',
     skills: ['Variables & Data Types', 'Functions', 'Arrays & Objects', 'DOM Manipulation', 'ES6+ Features', 'Async Programming'],
+    documents: [
+      {
+        id: 1,
+        title: 'JavaScript Fundamentals - Course Syllabus',
+        type: 'pdf',
+        size: '2.5 MB',
+        downloadUrl: '#',
+        description: 'Complete course outline and learning objectives'
+      },
+      {
+        id: 2,
+        title: 'ES6 Features Cheat Sheet',
+        type: 'pdf',
+        size: '1.2 MB',
+        downloadUrl: '#',
+        description: 'Quick reference guide for modern JavaScript features'
+      },
+      {
+        id: 3,
+        title: 'JavaScript Basics Presentation',
+        type: 'slides',
+        size: '5.8 MB',
+        downloadUrl: '#',
+        description: 'Slide deck covering variables, functions, and data types'
+      },
+      {
+        id: 4,
+        title: 'Code Examples Repository',
+        type: 'code',
+        size: '850 KB',
+        downloadUrl: '#',
+        description: 'All code examples from the course in one place'
+      },
+      {
+        id: 5,
+        title: 'Practice Exercises Workbook',
+        type: 'worksheet',
+        size: '3.1 MB',
+        downloadUrl: '#',
+        description: '50+ practice problems with solutions'
+      },
+      {
+        id: 6,
+        title: 'Array Methods Study Notes',
+        type: 'notes',
+        size: '950 KB',
+        downloadUrl: '#',
+        description: 'Detailed notes on map, filter, reduce, and more'
+      }
+    ],
     modules: [
       {
         id: 1,
@@ -170,6 +230,40 @@ export const coursesData: Record<string, CourseData> = {
     color: 'bg-gradient-to-br from-cyan-400 to-blue-500',
     overview: 'Learn React from scratch and build real-world applications. This course covers components, hooks, state management, and modern React patterns. Prerequisites: JavaScript fundamentals.',
     skills: ['Components', 'JSX', 'Hooks', 'State Management', 'Props', 'React Router', 'API Integration'],
+    documents: [
+      {
+        id: 1,
+        title: 'React Complete Guide',
+        type: 'pdf',
+        size: '4.2 MB',
+        downloadUrl: '#',
+        description: 'Comprehensive guide to React development'
+      },
+      {
+        id: 2,
+        title: 'React Hooks Reference',
+        type: 'pdf',
+        size: '1.8 MB',
+        downloadUrl: '#',
+        description: 'Complete reference for all React hooks'
+      },
+      {
+        id: 3,
+        title: 'Component Patterns Slides',
+        type: 'slides',
+        size: '6.5 MB',
+        downloadUrl: '#',
+        description: 'Best practices for building React components'
+      },
+      {
+        id: 4,
+        title: 'Sample React Projects',
+        type: 'code',
+        size: '2.3 MB',
+        downloadUrl: '#',
+        description: 'Starter templates and example projects'
+      }
+    ],
     modules: [
       {
         id: 1,
@@ -286,6 +380,40 @@ export const coursesData: Record<string, CourseData> = {
     color: 'bg-gradient-to-br from-blue-600 to-blue-800',
     overview: 'Take your TypeScript skills to the next level. This advanced course covers complex type systems, generics, decorators, and architectural patterns. Prerequisites: Strong JavaScript and basic TypeScript knowledge.',
     skills: ['Advanced Types', 'Generics', 'Decorators', 'Type Guards', 'Utility Types', 'Design Patterns', 'Performance'],
+    documents: [
+      {
+        id: 1,
+        title: 'TypeScript Advanced Patterns',
+        type: 'pdf',
+        size: '3.7 MB',
+        downloadUrl: '#',
+        description: 'Deep dive into advanced TypeScript patterns'
+      },
+      {
+        id: 2,
+        title: 'Generics Masterclass Slides',
+        type: 'slides',
+        size: '4.9 MB',
+        downloadUrl: '#',
+        description: 'Comprehensive presentation on TypeScript generics'
+      },
+      {
+        id: 3,
+        title: 'Type System Examples',
+        type: 'code',
+        size: '1.5 MB',
+        downloadUrl: '#',
+        description: 'Real-world type system implementation examples'
+      },
+      {
+        id: 4,
+        title: 'Utility Types Cheat Sheet',
+        type: 'notes',
+        size: '780 KB',
+        downloadUrl: '#',
+        description: 'Quick reference for TypeScript utility types'
+      }
+    ],
     modules: [
       {
         id: 1,
@@ -402,6 +530,48 @@ export const coursesData: Record<string, CourseData> = {
     color: 'bg-gradient-to-br from-blue-500 to-yellow-400',
     overview: 'Learn Python programming from the ground up. This comprehensive course covers everything from basic syntax to advanced topics like OOP and file handling. No prior experience required.',
     skills: ['Python Basics', 'Data Structures', 'OOP', 'File Handling', 'Error Handling', 'Modules', 'Testing'],
+    documents: [
+      {
+        id: 1,
+        title: 'Python Complete Documentation',
+        type: 'pdf',
+        size: '5.3 MB',
+        downloadUrl: '#',
+        description: 'Full course documentation and reference guide'
+      },
+      {
+        id: 2,
+        title: 'Python OOP Presentation',
+        type: 'slides',
+        size: '7.2 MB',
+        downloadUrl: '#',
+        description: 'Object-oriented programming in Python'
+      },
+      {
+        id: 3,
+        title: 'Python Projects Pack',
+        type: 'code',
+        size: '3.8 MB',
+        downloadUrl: '#',
+        description: '10 complete Python projects with source code'
+      },
+      {
+        id: 4,
+        title: 'Data Structures Study Guide',
+        type: 'notes',
+        size: '1.4 MB',
+        downloadUrl: '#',
+        description: 'Python data structures explained with examples'
+      },
+      {
+        id: 5,
+        title: 'Practice Problems Workbook',
+        type: 'worksheet',
+        size: '2.9 MB',
+        downloadUrl: '#',
+        description: '100+ coding challenges with solutions'
+      }
+    ],
     modules: [
       {
         id: 1,
@@ -508,6 +678,40 @@ export const coursesData: Record<string, CourseData> = {
     color: 'bg-gradient-to-br from-green-500 to-emerald-600',
     overview: 'Learn to build scalable backend applications with Node.js and Express. This course covers REST APIs, middleware, authentication, and database integration. Prerequisites: JavaScript fundamentals.',
     skills: ['Node.js Basics', 'Express Framework', 'REST APIs', 'Middleware', 'Authentication', 'Database Integration', 'Error Handling'],
+    documents: [
+      {
+        id: 1,
+        title: 'Node.js & Express Guide',
+        type: 'pdf',
+        size: '4.6 MB',
+        downloadUrl: '#',
+        description: 'Complete guide to backend development'
+      },
+      {
+        id: 2,
+        title: 'REST API Design Slides',
+        type: 'slides',
+        size: '5.4 MB',
+        downloadUrl: '#',
+        description: 'Best practices for designing REST APIs'
+      },
+      {
+        id: 3,
+        title: 'Express Middleware Examples',
+        type: 'code',
+        size: '1.9 MB',
+        downloadUrl: '#',
+        description: 'Common middleware implementations'
+      },
+      {
+        id: 4,
+        title: 'Authentication Patterns',
+        type: 'notes',
+        size: '1.1 MB',
+        downloadUrl: '#',
+        description: 'JWT, OAuth, and session-based auth explained'
+      }
+    ],
     modules: [
       {
         id: 1,
@@ -623,6 +827,48 @@ export const coursesData: Record<string, CourseData> = {
     color: 'bg-gradient-to-br from-purple-500 to-pink-500',
     overview: 'Learn SQL from the ground up and master database design. This course covers everything from basic queries to advanced optimization techniques. Work with MySQL, PostgreSQL, and SQLite.',
     skills: ['SQL Basics', 'Database Design', 'Joins & Relationships', 'Indexes', 'Query Optimization', 'Transactions', 'Stored Procedures'],
+    documents: [
+      {
+        id: 1,
+        title: 'SQL Complete Reference',
+        type: 'pdf',
+        size: '6.1 MB',
+        downloadUrl: '#',
+        description: 'Comprehensive SQL syntax and commands reference'
+      },
+      {
+        id: 2,
+        title: 'Database Design Fundamentals',
+        type: 'slides',
+        size: '8.3 MB',
+        downloadUrl: '#',
+        description: 'Normalization, ERD, and schema design'
+      },
+      {
+        id: 3,
+        title: 'SQL Query Examples',
+        type: 'code',
+        size: '2.7 MB',
+        downloadUrl: '#',
+        description: 'Real-world SQL queries and solutions'
+      },
+      {
+        id: 4,
+        title: 'Join Operations Guide',
+        type: 'notes',
+        size: '1.6 MB',
+        downloadUrl: '#',
+        description: 'Visual guide to SQL joins with examples'
+      },
+      {
+        id: 5,
+        title: 'Optimization Techniques',
+        type: 'worksheet',
+        size: '2.2 MB',
+        downloadUrl: '#',
+        description: 'Performance tuning exercises and case studies'
+      }
+    ],
     modules: [
       {
         id: 1,
