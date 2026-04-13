@@ -20,6 +20,7 @@ export function Header() {
     };
   }, []);
 
+  
   return (
     <header className="bg-[#10162F] text-white sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
