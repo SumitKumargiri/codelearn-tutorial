@@ -2,11 +2,11 @@
 import Link from 'next/link';
 import { ROUTES } from '../utils/routes';
 import logo from "../../public/logo1.png";
-import facebook from "../../public/facebook.png";
-import twitter from "../../public/twitterx.png";
-import instagram from "../../public/instagram.png";
-import linkdin from "../../public/linkdin.png";
-import youtube from "../../public/youtube.png";
+import facebook from "../../public/facebook1.png";
+import twitter from "../../public/twitter1.png";
+import instagram from "../../public/instagram1.png";
+import linkdin from "../../public/linkdin1.png";
+import youtube from "../../public/youtube1.png";
 import Image from "next/image";
 
 export function Footer() {
@@ -24,7 +24,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
-                <Image src={facebook.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
+                <Image src={facebook.src} alt="CodeLearn Logo" width={56} height={40} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Twitter className="w-5 h-5" /> */}
@@ -32,7 +32,7 @@ export function Footer() {
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Instagram className="w-5 h-5" /> */}
-                <Image src={instagram.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
+                <Image src={instagram.src} alt="CodeLearn Logo" width={66} height={32} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Linkedin className="w-5 h-5" /> */}
