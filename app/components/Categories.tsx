@@ -12,6 +12,7 @@ const categories = [
   { name: 'AI & ML', slug: 'ai-ml', icon: Brain, color: 'bg-teal-500', count: 18 }
 ];
 
+
 export function Categories() {
   return (
     <section className="py-16 bg-gray-50">
