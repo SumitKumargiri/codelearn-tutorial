@@ -21,11 +21,11 @@ export function Header() {
 
   
   return (
+    
     <header className="bg-[#10162F] text-white sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          
           <div className="flex items-center gap-8">
             <Link href={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-90 transition-opacity" >
               <Image src={logo.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
@@ -69,13 +69,13 @@ export function Header() {
           {isOpen && (
             <div className="md:hidden bg-[#10162F] px-4 pb-4">
               <nav className="flex flex-col gap-4">
-                <Link href={ROUTES.HOME} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Home</Link>
-                <Link href={ROUTES.CATALOG} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Catalog</Link>
-                <Link href={ROUTES.RESOURCES} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Resources</Link>
-                <Link href={ROUTES.COMMUNITY} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Community</Link>
+                <Link href={ROUTES.HOME} className="hover:text-[#FFD300]">Home</Link>
+                <Link href={ROUTES.CATALOG} className="hover:text-[#FFD300]">Catalog</Link>
+                <Link href={ROUTES.RESOURCES} className="hover:text-[#FFD300]">Resources</Link>
+                <Link href={ROUTES.COMMUNITY} className="hover:text-[#FFD300]">Community</Link>
               </nav>
             </div>
-          )}
+          )}     
     </header>
   );
 }
