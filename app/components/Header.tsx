@@ -4,10 +4,22 @@ import Link from 'next/link';
 import { ROUTES } from '../utils/routes';
 import logo from "../../public/logo1.png";
 import Image from "next/image";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleEsc = (e:any) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
   return (
     <header className="bg-[#10162F] text-white sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,10 +68,10 @@ export function Header() {
           {isOpen && (
             <div className="md:hidden bg-[#10162F] px-4 pb-4">
               <nav className="flex flex-col gap-4">
-                <Link href={ROUTES.HOME} className="hover:text-[#FFD300]">Home</Link>
-                <Link href={ROUTES.CATALOG} className="hover:text-[#FFD300]">Catalog</Link>
-                <Link href={ROUTES.RESOURCES} className="hover:text-[#FFD300]">Resources</Link>
-                <Link href={ROUTES.COMMUNITY} className="hover:text-[#FFD300]">Community</Link>
+                <Link href={ROUTES.HOME} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Home</Link>
+                <Link href={ROUTES.CATALOG} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Catalog</Link>
+                <Link href={ROUTES.RESOURCES} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Resources</Link>
+                <Link href={ROUTES.COMMUNITY} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Community</Link>
               </nav>
             </div>
           )}
