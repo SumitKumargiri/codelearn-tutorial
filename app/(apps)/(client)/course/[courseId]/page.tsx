@@ -1,5 +1,7 @@
-import CourseDetailPage from "@/features/course/components/CourseDetailPage";
+﻿import CourseDetailPage from "@/features/course/components/CourseDetailPage";
 
 export default function Page() {
   return <CourseDetailPage />;
 }
+
+

@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    "baseUrl": ".",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -19,6 +20,9 @@
       }
     ],
     "paths": {
+      "@/features/*": ["app/_features/*"],
+      "@/shared/*": ["app/_shared/*"],
+      "@/lib/*": ["app/_lib/*"],
       "@/*": ["./*"]
     }
   },

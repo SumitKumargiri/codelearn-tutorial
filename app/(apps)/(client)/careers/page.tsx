@@ -1,5 +1,7 @@
-import CareersPage from "@/features/careers/components/CareersPage";
+﻿import CareersPage from "@/features/careers/components/CareersPage";
 
 export default function Page() {
   return <CareersPage />;
 }
+
+
