@@ -63,7 +63,7 @@ export function Header() {
                 <Link href={ROUTES.COMMUNITY} className="hover:text-[#FFD300]">Community</Link>
               </nav>
             </div>
-          )}
+          )}     
     </header>
   );
 }
