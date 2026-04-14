@@ -6,6 +6,7 @@ export interface Lesson {
   completed: boolean;
   locked: boolean;
   description: string;
+  Instructions?: string;
   content?: string;
 }
 
@@ -108,6 +109,8 @@ export const coursesData: Record<string, CourseData> = {
         id: 1,
         title: 'Getting Started with JavaScript',
         lessons: [
+// ------------- javascript fundamentals course data -------------
+
           {
             id: 1,
             title: 'Introduction to JavaScript',
@@ -134,7 +137,11 @@ export const coursesData: Record<string, CourseData> = {
             type: 'exercise',
             completed: false,
             locked: false,
-            description: 'Learn about let, const, and var',
+            description: 'In this exercise, you will learn how to declare variables using var, let, and const in JavaScript.',
+            Instructions: `1. Create a variable using var and assign your name. 
+                          2. Create a variable using let and assign your age.
+                          3. Create a constant using const and assign your country. 
+                          4. Print all values using console.log().`,
             content: 'let name = "John";\nconst age = 25;\nconsole.log(name, age);'
           },
           {
@@ -169,6 +176,8 @@ export const coursesData: Record<string, CourseData> = {
             completed: false,
             locked: false,
             description: 'Learn to pass data to functions',
+            Instructions: `1. Create a function named greet that takes a name as a parameter and returns a greeting message.
+                          2. Call the function with different names and print the results.`,  
             content: 'function greet(name) {\n  return "Hello, " + name;\n}\nconsole.log(greet("Alice"));'
           },
           {
@@ -179,6 +188,10 @@ export const coursesData: Record<string, CourseData> = {
             completed: false,
             locked: false,
             description: 'Modern arrow function syntax',
+            Instructions: `1. Create an arrow function named add that takes two parameters a and b.
+                          2. The function should return the sum of a and b.
+                          3. Call the add function with any two numbers.
+                          4. Print the result using console.log().`,
             content: 'const add = (a, b) => a + b;\nconsole.log(add(5, 3));'
           }
         ]
@@ -194,7 +207,18 @@ export const coursesData: Record<string, CourseData> = {
             type: 'exercise',
             completed: false,
             locked: false,
-            description: 'Learn array methods like map, filter, reduce'
+            description: 'Learn array methods like map, filter, and reduce',
+            Instructions: `1. Create an array of numbers.
+                          2. Use the map() method to create a new array with each number doubled.
+                          3. Use the filter() method to get only numbers greater than 5.
+                          4. Print both results using console.log().`,
+            content: `const numbers = [1, 2, 3, 4, 5, 6];
+
+                      const doubled = numbers.map(num => num * 2);
+                      console.log(doubled);
+
+                      const filtered = numbers.filter(num => num > 5);
+                      console.log(filtered);`
           },
           {
             id: 9,
@@ -203,7 +227,23 @@ export const coursesData: Record<string, CourseData> = {
             type: 'exercise',
             completed: false,
             locked: false,
-            description: 'Create and manipulate JavaScript objects'
+            description: 'Create and manipulate JavaScript objects',
+            Instructions: `1. Create an object named person with properties: name, age, and country.
+                          2. Access and print each property using console.log().
+                          3. Add a new property called profession to the object.
+                          4. Print the updated object.`,
+            content: `const person = {
+                      name: "John",
+                      age: 25,
+                      country: "USA"
+                    };
+
+                    console.log(person.name);
+                    console.log(person.age);
+                    console.log(person.country);
+
+                    person.profession = "Developer";
+                    console.log(person);`
           },
           {
             id: 10,
@@ -218,6 +258,9 @@ export const coursesData: Record<string, CourseData> = {
       }
     ]
   },
+
+// ----------------- start React for Beginners course data -----------------
+
   'react-beginners': {
     id: 'react-beginners',
     title: 'React for Beginners',
