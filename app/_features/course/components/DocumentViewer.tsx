@@ -9,7 +9,7 @@ import Link from 'next/link';
 export function DocumentViewer() {
   const { courseId, documentId } = useParams<{ courseId: string; documentId: string }>();
 //   const navigate = useNavigate();
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
 
   const course = courseId ? coursesData[courseId] : null;
@@ -20,6 +20,21 @@ export function DocumentViewer() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentSection]);
+
+//   useEffect(() => {
+//   const handleResize = () => {
+//     if (window.innerWidth >= 1024) {
+//       setSidebarOpen(true); // desktop → open
+//     } else {
+//       setSidebarOpen(false); // mobile → closed
+//     }
+//   };
+
+//   handleResize(); // initial check
+//   window.addEventListener("resize", handleResize);
+
+//   return () => window.removeEventListener("resize", handleResize);
+// }, []);
 
   if (!course || !document || !documentContent) {
     return (
@@ -76,13 +91,17 @@ export function DocumentViewer() {
         </div>
       </header>
 
-      <div className="flex">
+      <div className="flex w-full">
         {/* Sidebar */}
-        <aside
-          className={`${
-            sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          } fixed lg:sticky top-[73px] left-0 h-[calc(100vh-73px)] w-80 bg-white border-r border-gray-200 transition-transform duration-300 z-40 lg:translate-x-0 overflow-y-auto`}
-        >
+       <aside
+  className={`${
+    sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+  } lg:sticky top-[73px] left-0 h-[calc(100vh-73px)]
+  w-[40%] lg:w-[50%]
+  bg-white border-r border-gray-200
+  transition-transform duration-300 z-40
+  lg:translate-x-0 overflow-y-auto`}
+>
           <div className="p-6">
             <div className="mb-6">
               <div className={`w-12 h-12 ${course.color} rounded-xl flex items-center justify-center text-2xl mb-3`}>
@@ -116,8 +135,8 @@ export function DocumentViewer() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 lg:ml-0">
-          <div className="max-w-4xl mx-auto px-6 py-8">
+        <main className="flex-1 lg:ml-[200px]">
+          <div className="max-w-6xl mx-auto px-6 py-8">
             {/* Section Header */}
             <div className="mb-8">
               <div className="text-sm text-gray-600 mb-2">
