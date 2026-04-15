@@ -65,7 +65,7 @@ export function DocumentViewer() {
   const currentSectionData = documentContent.sections[currentSection];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div style={{height:'650px'}} className="bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="px-4 sm:px-6 lg:px-8 py-4">
@@ -91,17 +91,14 @@ export function DocumentViewer() {
         </div>
       </header>
 
-      <div className="flex w-full">
-        {/* Sidebar */}
-       <aside
-  className={`${
-    sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-  } lg:sticky top-[73px] left-0 h-[calc(100vh-73px)]
-  w-[40%] lg:w-[50%]
-  bg-white border-r border-gray-200
-  transition-transform duration-300 z-40
-  lg:translate-x-0 overflow-y-auto`}
->
+      <div className="flex">
+        {/*------ Sidebar ----------*/}
+       <aside style={{ width: '260px',height:'600px' }}
+          className={`${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+            bg-white border-r border-gray-200
+            transition-transform duration-300 z-40
+            lg:sticky overflow-y-auto           
+          `} >
           <div className="p-6">
             <div className="mb-6">
               <div className={`w-12 h-12 ${course.color} rounded-xl flex items-center justify-center text-2xl mb-3`}>
@@ -134,8 +131,8 @@ export function DocumentViewer() {
           </div>
         </aside>
 
-        {/* Main Content */}
-        <main className="flex-1 lg:ml-[200px]">
+        {/*---------- Main Content -------*/}
+        <main style={{height:'600px'}} className="flex-1 overflow-y-auto">
           <div className="max-w-6xl mx-auto px-6 py-8">
             {/* Section Header */}
             <div className="mb-8">
@@ -148,7 +145,7 @@ export function DocumentViewer() {
               )}
             </div>
 
-            {/* Section Content */}
+            {/*-------- Section Content ---------*/}
             <div className="prose prose-lg max-w-none">
               <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
                 {currentSectionData.content.map((block, index) => (
@@ -164,9 +161,9 @@ export function DocumentViewer() {
                     {block.type === 'subheading' && (
                       <h3 className="text-xl font-semibold mb-3 mt-6">{block.text}</h3>
                     )}
-
+      {/* ---------------------------- code show on ui ----------------------   */}
                     {block.type === 'code' && (
-                      <div className="bg-gray-900 rounded-xl overflow-hidden mb-4">
+                      <div className="bg-gray-900 rounded-xl overflow-hidden mb-4 text-white">
                         <div className="bg-gray-800 px-4 py-2 text-white text-sm border-b border-gray-700">
                           {block.language || 'code'}
                         </div>
@@ -175,7 +172,64 @@ export function DocumentViewer() {
                         </pre>
                       </div>
                     )}
-
+  {/* ------------ image show on ui ---------------------- */}
+                    {block.type === 'image' && block.url && (
+                      <div className="my-6">
+                        <img
+                          src={block.url}
+                          alt={block.alt || 'image'}
+                          className="w-full rounded-xl"
+                        />
+                        {block.alt && (
+                          <p className="text-sm text-gray-500 text-center mt-2">{block.alt}</p>
+                        )}
+                      </div>
+                    )}
+    {/* -------------------- video show on ui ---------------------- */}
+                    {block.type === 'video' && block.url && (
+                      <div className="my-6">
+                        <video controls className="w-full rounded-xl">
+                          <source src={block.url} />
+                        </video>
+                      </div>
+                    )}
+    {/* --------------------- table show on ui ---------------------- */}
+                    {block.type === 'table' && block.headers && block.rows && (
+                      <div className="overflow-x-auto my-6">
+                        <table className="w-full border">
+                          <thead className="bg-gray-100">
+                            <tr>
+                              {block.headers.map((h, i) => (
+                                <th key={i} className="p-2 border">{h}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {block.rows.map((row, i) => (
+                              <tr key={i}>
+                                {row.map((cell, j) => (
+                                  <td key={j} className="p-2 border">{cell}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+    {/* -------------------- quote show on ui ---------------------- */}
+                    {block.type === 'quote' && block.text && (
+                      <blockquote className="border-l-4 border-gray-400 pl-4 italic my-6">
+                        "{block.text}"
+                        {block.author && (
+                          <div className="text-sm text-gray-500 mt-2">— {block.author}</div>
+                        )}
+                      </blockquote>
+                    )}
+      {/* ---------- divider show on ui ---------------------- */}
+                    {block.type === 'divider' && (
+                      <hr className="my-8 border-gray-300" />
+                    )}
+      {/* --------------------- list show on ui ----------------------  */}
                     {block.type === 'list' && (
                       <ul className="list-disc list-inside space-y-2 mb-4">
                         {block.items?.map((item, i) => (
@@ -183,7 +237,7 @@ export function DocumentViewer() {
                         ))}
                       </ul>
                     )}
-
+      {/* ----------------- note and example show on ui ----------------------   */}
                     {block.type === 'note' && (
                       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-4">
                         <div className="flex items-start gap-2">
@@ -198,7 +252,7 @@ export function DocumentViewer() {
                         <div className="font-semibold text-green-800 mb-2">Example:</div>
                         <p className="text-green-900 mb-3">{block.description}</p>
                         {block.code && (
-                          <div className="bg-gray-900 rounded-lg overflow-hidden">
+                          <div className="bg-gray-900 rounded-lg overflow-hidden text-white">
                             <pre className="p-4 overflow-x-auto">
                               <code className="text-sm text-gray-100 font-mono">{block.code}</code>
                             </pre>
@@ -211,7 +265,7 @@ export function DocumentViewer() {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
+            {/*------- Navigation Buttons -------------*/}
             <div className="flex items-center justify-between pt-8 border-t border-gray-200">
               <button
                 onClick={handlePrevious}
@@ -242,6 +296,6 @@ export function DocumentViewer() {
           </div>
         </main>
       </div>
-    </div>
+      </div>
   );
 }
