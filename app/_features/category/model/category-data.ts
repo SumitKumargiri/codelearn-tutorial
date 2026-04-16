@@ -234,17 +234,6 @@ export const categoryData: CategoryData = {
     color: 'bg-indigo-500',
     description: 'Master server-side programming and API development',
     courses: [
-        {
-        id: 'dotnet-core',
-        title: '.NET Core Web API',
-        description: 'Build scalable backend APIs using ASP.NET Core. Learn controllers, middleware, dependency injection, and database integration.',
-        duration: '30 hours',
-        difficulty: 'Intermediate',
-        rating: 4.8,
-        students: '950K',
-        icon: '🟣',
-        color: 'bg-gradient-to-br from-purple-600 to-indigo-600'
-      },
       {
         id: 'nodejs-express',
         title: 'Node.js & Express',
@@ -266,19 +255,7 @@ export const categoryData: CategoryData = {
         students: '890K',
         icon: '🐍',
         color: 'bg-gradient-to-br from-green-600 to-teal-600'
-      },
-      {
-        id: 'redis',
-        title: 'Redis Caching',
-        description: 'Learn Redis for caching and performance optimization',
-        duration: '10 hours',
-        difficulty: 'Intermediate',
-        rating: 4.7,
-        students: '500K',
-        icon: '🔥',
-        color: 'bg-gradient-to-br from-red-500 to-orange-500'
-      },
-      
+      }
     ]
   },
   'ai-ml': {
