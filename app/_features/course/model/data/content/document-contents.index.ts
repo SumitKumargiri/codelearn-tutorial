@@ -23,6 +23,5 @@ export const documentContents: DocumentRecord = {
   //------ Python contents ---------
   'python-programming-1': pythonGuide,
   //------ .NET contents ---------
-  
   'dotnet-development-1': dotnetSyllabus
 };
