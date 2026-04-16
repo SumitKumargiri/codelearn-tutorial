@@ -1,5 +1,5 @@
 import { Clock, Users, Star, CheckCircle2 } from "lucide-react";
-import { CourseData } from "../../model/data/courses/course.types";
+import type { CourseData } from "@/features/course/model/course-data";
 
 type Props = {
   course: CourseData;
