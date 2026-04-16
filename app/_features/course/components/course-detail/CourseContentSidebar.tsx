@@ -1,7 +1,7 @@
 import { CheckCircle2, Lock, Trophy } from "lucide-react";
-import type { Lesson, Module } from "@/features/course/model/course-data";
 import type { LessonType } from "./course-detail-ui";
 import type { ReactNode } from "react";
+import { Lesson, Module } from "../../model/data/courses/course.types";
 
 type Props = {
   totalLessons: number;

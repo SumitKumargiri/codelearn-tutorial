@@ -1,7 +1,8 @@
+"use client";
 import { BookOpen, Play, Trophy } from "lucide-react";
-import type { Lesson } from "@/features/course/model/course-data";
 import type { LessonType } from "./course-detail-ui";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { Lesson } from "../../model/data/courses/course.types";
 
 type Props = {
   selectedLesson: Lesson | null;
@@ -20,6 +21,23 @@ export function LessonContent({
   onRunCode,
   getLessonIcon,
 }: Props) {
+  const [selectedAnswer, setSelectedAnswer] = useState<string>("");
+  const [result, setResult] = useState<string>("");
+  const correctAnswer = 'let name = "John";';
+
+  const checkAnswer = () => {
+    if (!selectedAnswer) {
+      setResult("⚠️ Please select an option");
+      return;
+    }
+
+    if (selectedAnswer === correctAnswer) {
+      setResult("✅ Correct");
+    } else {
+      setResult(`❌ Incorrect (Correct: ${correctAnswer})`);
+    }
+  };
+
   if (!selectedLesson) {
     return (
       <div className="bg-white rounded-2xl shadow-sm p-12 text-center">
@@ -55,7 +73,10 @@ export function LessonContent({
           <div className="space-y-4 mb-6">
             <div>
               <h3 className="font-semibold mb-3">Instructions:</h3>
-              <p className="text-gray-600 mb-6">{selectedLesson.description}</p>
+              {/* <p className="text-gray-600 mb-6">{selectedLesson.Instructions}</p> */}
+              {selectedLesson.Instructions?.split("\n").map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
             </div>
 
             <div>
@@ -83,7 +104,7 @@ export function LessonContent({
           </div>
         )}
 
-        {selectedLesson.type === "quiz" && (
+        {/* {selectedLesson.type === "quiz" && (
           <div className="space-y-6">
             <div className="p-6 bg-blue-50 border border-blue-200 rounded-xl">
               <h3 className="font-semibold mb-4">Quiz Question 1:</h3>
@@ -103,6 +124,50 @@ export function LessonContent({
                   </button>
                 ))}
               </div>
+            </div>
+          </div>
+        )} */}
+
+        {selectedLesson.type === "quiz" && (
+          <div className="space-y-6">
+            <div className="p-6 bg-blue-50 border border-blue-200 rounded-xl">
+              <h3 className="font-semibold mb-4">Quiz Question 1:</h3>
+              <p className="mb-4">
+                What is the correct way to declare a variable in JavaScript?
+              </p>
+
+              <div className="space-y-2">
+                {[
+                  'let name = "John";',
+                  'variable name = "John";',
+                  'var := "John";',
+                  'declare name = "John";',
+                ].map((option, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSelectedAnswer(option)}
+                    className={`w-full text-left p-3 border rounded-lg transition-colors
+                      ${
+                        selectedAnswer === option
+                          ? "border-[#3A10E5] bg-white"
+                          : "border-gray-300 hover:border-[#3A10E5]"
+                      }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+
+              {/* Submit Button */}
+              <button
+                onClick={checkAnswer}
+                className="mt-4 px-4 py-2 bg-[#3A10E5] text-white rounded-lg"
+              >
+                Submit Answer
+              </button>
+
+              {/* Result */}
+              {result && <p className="mt-3 font-semibold">{result}</p>}
             </div>
           </div>
         )}
