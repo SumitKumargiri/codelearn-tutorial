@@ -7,6 +7,7 @@ import { nodeExpressGuide } from './nodejs/nodejs-express-1.content';
 import { sqlDatabaseGuide } from './sql/sql-database-1.content';
 import { pythonGuide } from './python/python-programming-1.content';
 import { dotnetSyllabus } from './dotnet/dotnet-1.content';
+import { redisBasics } from './redis/redis-basics.content';
 
 export const documentContents: DocumentRecord = {
   //------ javascript contents ---------
@@ -23,5 +24,6 @@ export const documentContents: DocumentRecord = {
   //------ Python contents ---------
   'python-programming-1': pythonGuide,
   //------ .NET contents ---------
-  'dotnet-development-1': dotnetSyllabus
+  'dotnet-development-1': dotnetSyllabus,
+  'redis-1': redisBasics
 };
