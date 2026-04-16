@@ -5,7 +5,6 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
 import { coursesData } from '@/features/course/model/course-data';
-import type { Lesson } from '@/features/course/model/course-data';
 
 import { CourseDetailTopBar } from './course-detail/CourseDetailTopBar';
 import { CourseSummaryCard } from './course-detail/CourseSummaryCard';
@@ -13,6 +12,7 @@ import { CourseContentSidebar } from './course-detail/CourseContentSidebar';
 import { LessonContent } from './course-detail/LessonContent';
 import { getDifficultyColor, getLessonIcon } from './course-detail/course-detail-ui';
 import { BookOpen, FileCode, FileSpreadsheet, FileText, Presentation, StickyNote } from 'lucide-react';
+import { Lesson } from '../model/data/courses/course.types';
 
 export default function CourseDetail() {
   const { courseId } = useParams<{ courseId: string }>();

@@ -1,8 +1,8 @@
 "use client";
 import { BookOpen, Play, Trophy } from "lucide-react";
-import type { Lesson } from "@/features/course/model/course-data";
 import type { LessonType } from "./course-detail-ui";
 import { useState, type ReactNode } from "react";
+import { Lesson } from "../../model/data/courses/course.types";
 
 type Props = {
   selectedLesson: Lesson | null;
