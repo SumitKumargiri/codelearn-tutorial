@@ -33,10 +33,10 @@ export default function CatalogPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8 flex items-center gap-4">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
           <span className="font-semibold">Filter by:</span>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap sm:flex-nowrap overflow-x-auto">
             {["All", "Beginner", "Intermediate", "Advanced"].map((level) => (
               <button
                 key={level}

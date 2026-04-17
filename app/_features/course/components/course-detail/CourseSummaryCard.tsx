@@ -9,16 +9,14 @@ type Props = {
 export function CourseSummaryCard({ course, difficultyColor }: Props) {
   return (
     <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-      <div className="flex items-start gap-6">
-        <div
-          className={`w-20 h-20 ${course.color} rounded-2xl flex items-center justify-center text-3xl flex-shrink-0`}
-        >
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+        <div className={`w-16 h-16 sm:w-20 sm:h-20 ${course.color} rounded-2xl flex items-center justify-center text-2xl sm:text-3xl flex-shrink-0`}>
           {course.icon}
         </div>
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-3">
-            <h1 className="text-4xl">{course.title}</h1>
-            <span className={`px-3 py-1 rounded-full text-sm ${difficultyColor}`}>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+            <h1 className="text-2xl sm:text-4xl leading-tight">{course.title}</h1>
+            <span className={`px-3 py-1 rounded-full text-xs sm:text-sm w-fit ${difficultyColor}`}>
               {course.difficulty}
             </span>
           </div>
