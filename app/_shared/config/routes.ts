@@ -1,3 +1,5 @@
+import ComingSoonPage from "@/features/coming-soon/components/ComingSoonPage";
+
 export const ROUTES = {
   HOME: "/",
   COURSE_DETAIL: (courseId: string) => `/course/${courseId}`,
@@ -11,4 +13,5 @@ export const ROUTES = {
   CAREERS: "/careers",
   PRIVACY: "/privacy",
   TERMS: "/terms",
+  ComingSoon: "/coming-soon",
 };
