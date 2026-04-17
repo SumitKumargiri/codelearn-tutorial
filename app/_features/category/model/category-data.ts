@@ -6,7 +6,8 @@ import {
   Shield,
   Smartphone,
   Server,
-  Brain
+  Brain,
+  Cloud
 } from "lucide-react";
 import type { CategoryData } from "./types";
 
@@ -52,15 +53,7 @@ export const categoryData: CategoryData = {
         students: '3.5M',
         icon: '🎨',
         color: 'bg-gradient-to-br from-orange-400 to-red-500'
-      }
-    ]
-  },
-  'programming': {
-    name: 'Programming',
-    icon: Code,
-    color: 'bg-purple-500',
-    description: 'Learn programming fundamentals and popular languages from scratch',
-    courses: [
+      },
       {
         id: 'python-programming',
         title: 'Python Programming',
@@ -97,6 +90,81 @@ export const categoryData: CategoryData = {
       }
     ]
   },
+  'devops': {
+      name: 'DevOps & Cloud',
+      icon: Cloud,
+      color: 'bg-gradient-to-br from-sky-500 to-indigo-600',
+      description: 'Learn DevOps tools, cloud platforms, CI/CD pipelines, and infrastructure automation',
+      courses: [
+        {
+          id: 'docker-kubernetes',
+          title: 'Docker & Kubernetes',
+          description: 'Learn containerization with Docker and orchestration with Kubernetes for scalable deployments.',
+          duration: '28 hours',
+          difficulty: 'Intermediate',
+          rating: 4.8,
+          students: '1.4M',
+          icon: '🐳',
+          color: 'bg-gradient-to-br from-blue-500 to-cyan-500',
+          progress: 40
+        },
+        {
+          id: 'aws-fundamentals',
+          title: 'AWS Cloud Fundamentals',
+          description: 'Master AWS services like EC2, S3, Lambda, and deploy applications on the cloud.',
+          duration: '30 hours',
+          difficulty: 'Beginner',
+          rating: 4.7,
+          students: '2.2M',
+          icon: '☁️',
+          color: 'bg-gradient-to-br from-orange-400 to-yellow-500'
+        },
+        {
+          id: 'ci-cd-pipelines',
+          title: 'CI/CD Pipelines',
+          description: 'Build automated pipelines using GitHub Actions, Jenkins, and GitLab CI/CD.',
+          duration: '22 hours',
+          difficulty: 'Intermediate',
+          rating: 4.8,
+          students: '1.1M',
+          icon: '🔄',
+          color: 'bg-gradient-to-br from-green-500 to-emerald-600'
+        },
+        {
+          id: 'terraform-iac',
+          title: 'Infrastructure as Code (Terraform)',
+          description: 'Provision and manage infrastructure using Terraform and automate deployments.',
+          duration: '24 hours',
+          difficulty: 'Intermediate',
+          rating: 4.7,
+          students: '900K',
+          icon: '🏗️',
+          color: 'bg-gradient-to-br from-purple-500 to-indigo-600'
+        },
+        {
+          id: 'linux-devops',
+          title: 'Linux for DevOps',
+          description: 'Master Linux commands, shell scripting, and server management for DevOps workflows.',
+          duration: '18 hours',
+          difficulty: 'Beginner',
+          rating: 4.6,
+          students: '1.6M',
+          icon: '🐧',
+          color: 'bg-gradient-to-br from-gray-700 to-gray-900'
+        },
+        {
+          id: 'monitoring-logging',
+          title: 'Monitoring & Logging',
+          description: 'Learn Prometheus, Grafana, and ELK stack for monitoring and logging systems.',
+          duration: '20 hours',
+          difficulty: 'Advanced',
+          rating: 4.7,
+          students: '650K',
+          icon: '📊',
+          color: 'bg-gradient-to-br from-pink-500 to-red-500'
+        }
+      ]
+    },
   'data-science': {
     name: 'Data Science',
     icon: Database,
