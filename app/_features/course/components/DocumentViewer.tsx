@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { coursesData } from '../model/course-data';
 import { documentContents } from '../model/documentContents';
 import Link from 'next/link';
+import ComingSoonPage from '@/features/coming-soon/components/ComingSoonPage';
 
 export function DocumentViewer() {
   const { courseId, documentId } = useParams<{ courseId: string; documentId: string }>();
@@ -37,17 +38,19 @@ export function DocumentViewer() {
 // }, []);
 
   if (!course || !document || !documentContent) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <BookOpen className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-          <h1 className="text-3xl mb-4">Document not found</h1>
-          <Link href="/" className="text-[#3A10E5] hover:underline">
-            Go back to home
-          </Link>
-        </div>
-      </div>
-    );
+    // return (
+    //   <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    //     <div className="text-center">
+    //       <BookOpen className="w-16 h-16 mx-auto mb-4 text-gray-400" />
+    //       <h1 className="text-3xl mb-4">Document not found</h1>
+    //       <Link href="/" className="text-[#3A10E5] hover:underline">
+    //         Go back to home
+    //       </Link>
+    //     </div>
+    //   </div>
+    // );
+  
+    return <ComingSoonPage />;
   }
 
   const handlePrevious = () => {

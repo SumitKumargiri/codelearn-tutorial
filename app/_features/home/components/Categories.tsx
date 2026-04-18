@@ -1,9 +1,9 @@
-import { Code, Database, Layout, Palette, Shield, Smartphone, Server, Brain } from 'lucide-react';
+import { Code, Database, Layout, Palette, Shield, Smartphone, Server, Brain, Cloud } from 'lucide-react';
 import Link from 'next/link';
 
 const categories = [
   { name: 'Web Development', slug: 'web-development', icon: Layout, color: 'bg-blue-500', count: 45 },
-  { name: 'Programming', slug: 'programming', icon: Code, color: 'bg-purple-500', count: 38 },
+  { name: 'DevOps & Cloud', slug: 'devops', icon: Cloud, color: 'bg-gradient-to-br from-sky-500 to-indigo-600', count: 12 },
   { name: 'Data Science', slug: 'data-science', icon: Database, color: 'bg-green-500', count: 32 },
   { name: 'Design', slug: 'design', icon: Palette, color: 'bg-pink-500', count: 28 },
   { name: 'Mobile Dev', slug: 'mobile-dev', icon: Smartphone, color: 'bg-orange-500', count: 25 },
