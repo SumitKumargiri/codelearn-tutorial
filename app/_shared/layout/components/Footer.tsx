@@ -23,22 +23,22 @@ export function Footer() {
               Empowering millions to learn coding and tech skills through hands-on, interactive learning experiences.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://facebook.com/aaditya.goshwami.39" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 <Image src={facebook.src} alt="CodeLearn Logo" width={56} height={40} className="rounded"/>
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Twitter className="w-5 h-5" /> */}
                 <Image src={twitter.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://instagram.com/goshwamiaaditya" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Instagram className="w-5 h-5" /> */}
                 <Image src={instagram.src} alt="CodeLearn Logo" width={66} height={32} className="rounded"/>
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://linkedin.com/in/sumit-kumar-giri-524718214" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Linkedin className="w-5 h-5" /> */}
                 <Image src={linkdin.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://youtube.com/@SKtutorial15434" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                 {/* <Youtube className="w-5 h-5" /> */}
                 <Image src={youtube.src} alt="CodeLearn Logo" width={44} height={32} className="rounded"/>
               </a>
