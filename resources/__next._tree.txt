@@ -2,4 +2,4 @@
 :HL["/codelearn-tutorial/_next/static/chunks/11i2bvsjwqq.6.css","style"]
 :HL["/codelearn-tutorial/_next/static/media/797e433ab948586e-s.p.0.q-h669a_dqa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/codelearn-tutorial/_next/static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(apps)","param":null,"prefetchHints":0,"slots":{"children":{"name":"(client)","param":null,"prefetchHints":0,"slots":{"children":{"name":"resources","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"mWtLSFhfRFsYFMyuXdJz0"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(apps)","param":null,"prefetchHints":0,"slots":{"children":{"name":"(client)","param":null,"prefetchHints":0,"slots":{"children":{"name":"resources","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"h67CIyBTvKt_p6VYGMjy_"}
