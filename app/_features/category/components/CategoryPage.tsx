@@ -6,9 +6,14 @@ import { CourseCard } from "@/features/course/components/CourseCard";
 import Link from 'next/link';
 import { categoryData } from "@/features/category/model/category-data";
 
+type Props = {
+  slug?: string;
+};
 
-export default function CategoryPage() {
-  const { slug } = useParams<{ slug: string }>();
+export default function CategoryPage({ slug: propSlug }: Props) {
+  // const { slug } = useParams<{ slug: string }>();
+  const params = useParams<{ slug: string }>();
+  const slug = propSlug || params?.slug;
   const category = slug ? categoryData[slug] : null;
 
   if (!category) {

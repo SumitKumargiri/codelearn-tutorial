@@ -8,6 +8,7 @@ import { sqlDatabaseGuide } from './sql/sql-database-1.content';
 import { pythonGuide } from './python/python-programming-1.content';
 import { dotnetSyllabus } from './dotnet/dotnet-1.content';
 import { redisBasics } from './redis/redis-basics.content';
+import { tsBasicTypes } from './typescript/basic-types-2.content';
 
 export const documentContents: DocumentRecord = {
   //------ javascript contents ---------
@@ -17,6 +18,7 @@ export const documentContents: DocumentRecord = {
   'react-beginners-1': reactBasics,
   //------ TypeScript contents ---------
   'advanced-typescript-1': tsAdvancedPatterns,
+  'advanced-typescript-2': tsBasicTypes, 
   //------ Node.js & Express contents ---------
   'nodejs-express-1': nodeExpressGuide,
   //------ SQL Database contents ---------

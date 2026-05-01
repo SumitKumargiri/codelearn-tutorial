@@ -1,6 +1,7 @@
 ﻿import { Clock, Star, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Course } from "@/features/course/model/types";
+import { ROUTES } from '@/shared/config/routes';
 
 interface CourseCardProps {
   course: Course;
@@ -14,7 +15,8 @@ export function CourseCard({ course }: CourseCardProps) {
   };
 
   return (
-    <Link href={`/course/${course.id}`} className="block bg-white rounded-xl border border-gray-200 hover:border-[#3A10E5]/50 hover:shadow-lg transition-all duration-300 group cursor-pointer overflow-hidden">
+    // href={`/course/${course.id}`}
+    <Link href={`${ROUTES.COURSE_DETAIL(course.id)}`} className="block bg-white rounded-xl border border-gray-200 hover:border-[#3A10E5]/50 hover:shadow-lg transition-all duration-300 group cursor-pointer overflow-hidden">
       {/* Course Header */}
       <div className={`${course.color} p-6 relative overflow-hidden`}>
         <div className="absolute top-0 right-0 text-6xl opacity-10">{course.icon}</div>

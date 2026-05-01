@@ -13,9 +13,15 @@ import { BookOpen, FileCode, FileSpreadsheet, FileText, Presentation, StickyNote
 import { Lesson } from '../model/data/courses/course.types';
 import ComingSoonPage from '@/features/coming-soon/components/ComingSoonPage';
 
-export default function CourseDetail() {
-  const { courseId } = useParams<{ courseId: string }>();
-  const course = courseId ? coursesData[courseId] : null;
+type Props = {
+  courseId?: string;
+};
+
+export default function CourseDetail({ courseId: propCourseId }: Props) {
+  // const { courseId } = useParams<{ courseId: string }>();
+  // const course = courseId ? coursesData[courseId] : null;
+   const courseId = propCourseId;
+  const course = coursesData?.[courseId as string] ?? null;
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [code, setCode] = useState('');
   const [output, setOutput] = useState('');
