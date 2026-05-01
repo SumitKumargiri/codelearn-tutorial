@@ -29,7 +29,7 @@ export function Canvas3D({ scale = 2.5 }: Canvas3DProps) {
 
       {/* Environment - soft lighting */}
       <Suspense fallback={null}>
-        <Environment preset="city" intensity={0.5} />
+        <Environment preset="city" />
       </Suspense>
 
       {/* 3D Content */}
