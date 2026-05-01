@@ -7,9 +7,30 @@ import { documentContents } from '../model/documentContents';
 import Link from 'next/link';
 import ComingSoonPage from '@/features/coming-soon/components/ComingSoonPage';
 
-export function DocumentViewer() {
-  const { courseId, documentId } = useParams<{ courseId: string; documentId: string }>();
+type Props = {
+  courseId?: string;
+  documentId?: string;
+};
+
+export function DocumentViewer({
+  courseId: propCourseId,
+  documentId: propDocumentId,
+}: Props) {
+  // const { courseId, documentId } = useParams<{ courseId: string; documentId: string }>();
 //   const navigate = useNavigate();
+  // const [sidebarOpen, setSidebarOpen] = useState(false);
+  // const [currentSection, setCurrentSection] = useState(0);
+
+  // const course = courseId ? coursesData[courseId] : null;
+  // const documentKey = `${courseId}-${documentId}`;
+  // const documentContent = documentContents[documentKey];
+  // const document = course?.documents.find(d => d.id === Number(documentId));
+
+  
+  const params = useParams<{ courseId: string; documentId: string }>();
+  const courseId = propCourseId || params?.courseId;
+  const documentId = propDocumentId || params?.documentId;
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
 

@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://codelearn-tutorial.vercel.app/sitemap.xml

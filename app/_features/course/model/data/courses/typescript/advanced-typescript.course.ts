@@ -23,7 +23,7 @@ export const advancedTypescript: CourseData = {
       },
       {
         id: 2,
-        title: 'Generics Masterclass Slides',
+        title: 'Basic Types',
         type: 'slides',
         size: '4.9 MB',
         downloadUrl: '#',
