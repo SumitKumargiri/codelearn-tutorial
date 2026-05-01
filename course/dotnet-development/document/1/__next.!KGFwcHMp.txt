@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[39756,["/codelearn-tutorial/_next/static/chunks/0b-ud0a-irlvz.js","/codelearn-tutorial/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-3:I[37457,["/codelearn-tutorial/_next/static/chunks/0b-ud0a-irlvz.js","/codelearn-tutorial/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-4:I[52324,["/codelearn-tutorial/_next/static/chunks/0b-ud0a-irlvz.js","/codelearn-tutorial/_next/static/chunks/0d3shmwh5_nmn.js","/codelearn-tutorial/_next/static/chunks/0x7pn9-skwe5l.js"],"default"]
+2:I[39756,["/codelearn-tutorial/_next/static/chunks/0q7x7-5_eh.6j.js","/codelearn-tutorial/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+3:I[37457,["/codelearn-tutorial/_next/static/chunks/0q7x7-5_eh.6j.js","/codelearn-tutorial/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+4:I[52324,["/codelearn-tutorial/_next/static/chunks/0q7x7-5_eh.6j.js","/codelearn-tutorial/_next/static/chunks/0d3shmwh5_nmn.js","/codelearn-tutorial/_next/static/chunks/0x7pn9-skwe5l.js"],"default"]
 5:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}],"notFound":[["$","$L4",null,{}],[]]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W5","buildId":"kR2tNGdWYV8ZU-Ir1Ii4_"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}],"notFound":[["$","$L4",null,{}],[]]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W5","buildId":"mWtLSFhfRFsYFMyuXdJz0"}
