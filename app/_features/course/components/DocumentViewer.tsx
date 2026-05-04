@@ -16,17 +16,6 @@ export function DocumentViewer({
   courseId: propCourseId,
   documentId: propDocumentId,
 }: Props) {
-  // const { courseId, documentId } = useParams<{ courseId: string; documentId: string }>();
-//   const navigate = useNavigate();
-  // const [sidebarOpen, setSidebarOpen] = useState(false);
-  // const [currentSection, setCurrentSection] = useState(0);
-
-  // const course = courseId ? coursesData[courseId] : null;
-  // const documentKey = `${courseId}-${documentId}`;
-  // const documentContent = documentContents[documentKey];
-  // const document = course?.documents.find(d => d.id === Number(documentId));
-
-  
   const params = useParams<{ courseId: string; documentId: string }>();
   const courseId = propCourseId || params?.courseId;
   const documentId = propDocumentId || params?.documentId;
@@ -43,34 +32,7 @@ export function DocumentViewer({
     window.scrollTo(0, 0);
   }, [currentSection]);
 
-//   useEffect(() => {
-//   const handleResize = () => {
-//     if (window.innerWidth >= 1024) {
-//       setSidebarOpen(true); // desktop → open
-//     } else {
-//       setSidebarOpen(false); // mobile → closed
-//     }
-//   };
-
-//   handleResize(); // initial check
-//   window.addEventListener("resize", handleResize);
-
-//   return () => window.removeEventListener("resize", handleResize);
-// }, []);
-
   if (!course || !document || !documentContent) {
-    // return (
-    //   <div className="min-h-screen flex items-center justify-center bg-gray-50">
-    //     <div className="text-center">
-    //       <BookOpen className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-    //       <h1 className="text-3xl mb-4">Document not found</h1>
-    //       <Link href="/" className="text-[#3A10E5] hover:underline">
-    //         Go back to home
-    //       </Link>
-    //     </div>
-    //   </div>
-    // );
-  
     return <ComingSoonPage />;
   }
 
@@ -90,7 +52,6 @@ export function DocumentViewer({
 
   return (
     <div style={{height:'650px'}} className="bg-gray-50">
-      {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
@@ -117,12 +78,10 @@ export function DocumentViewer({
 
       <div className="flex">
         {/*------ Sidebar ----------*/}
-       <aside style={{ width: '260px',height:'600px' }}
-          className={`${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-            bg-white border-r border-gray-200
-            transition-transform duration-300 z-40
-            lg:sticky overflow-y-auto           
-          `} >
+       <aside className={`fixed top-0 left-0 h-full w-[260px] bg-white border-r border-gray-200 z-40
+          transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+          lg:translate-x-0 lg:static lg:h-[600px]
+        `} >
           <div className="p-6">
             <div className="mb-6">
               <div className={`w-12 h-12 ${course.color} rounded-xl flex items-center justify-center text-2xl mb-3`}>
@@ -156,7 +115,7 @@ export function DocumentViewer({
         </aside>
 
         {/*---------- Main Content -------*/}
-        <main style={{height:'600px'}} className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto lg:ml-[10px] h-[600px]">
           <div className="max-w-6xl mx-auto px-6 py-8">
             {/* Section Header */}
             <div className="mb-8">

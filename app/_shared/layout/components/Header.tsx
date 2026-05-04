@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { ROUTES } from '@/shared/config/routes';
 import logo from "@/public/logo1.png";
 import Image from "next/image";
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -16,6 +17,18 @@ export function Header() {
     document.addEventListener("keydown", handleEsc);
     return () => {
       document.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -67,12 +80,12 @@ export function Header() {
 
       {/* ---------------- small/responsive screen------------------------ */}
           {isOpen && (
-            <div className="md:hidden bg-[#10162F] px-4 pb-4">
+            <div ref={menuRef} className="md:hidden bg-[#10162F] px-4 pb-4">
               <nav className="flex flex-col gap-4">
-                <Link href={ROUTES.HOME} className="hover:text-[#FFD300]">Home</Link>
-                <Link href={ROUTES.CATALOG} className="hover:text-[#FFD300]">Catalog</Link>
-                <Link href={ROUTES.RESOURCES} className="hover:text-[#FFD300]">Resources</Link>
-                <Link href={ROUTES.COMMUNITY} className="hover:text-[#FFD300]">Community</Link>
+                <Link href={ROUTES.HOME} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Home</Link>
+                <Link href={ROUTES.CATALOG} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Catalog</Link>
+                <Link href={ROUTES.RESOURCES} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Resources</Link>
+                <Link href={ROUTES.COMMUNITY} onClick={() => setIsOpen(false)} className="hover:text-[#FFD300]">Community</Link>
               </nav>
             </div>
           )}     
