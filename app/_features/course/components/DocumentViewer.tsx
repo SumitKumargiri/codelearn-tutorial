@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, BookOpen, Home } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, BookOpen, Home, ChevronDown } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { coursesData } from '../model/course-data';
 import { documentContents } from '../model/documentContents';
@@ -22,6 +22,7 @@ export function DocumentViewer({
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
   const course = courseId ? coursesData[courseId] : null;
   const documentKey = `${courseId}-${documentId}`;
@@ -46,6 +47,16 @@ export function DocumentViewer({
     if (currentSection < documentContent.sections.length - 1) {
       setCurrentSection(currentSection + 1);
     }
+  };
+
+  const toggleSection = (sectionId: string) => {
+    const newExpanded = new Set(expandedSections);
+    if (newExpanded.has(sectionId)) {
+      newExpanded.delete(sectionId);
+    } else {
+      newExpanded.add(sectionId);
+    }
+    setExpandedSections(newExpanded);
   };
 
   const currentSectionData = documentContent.sections[currentSection];
@@ -82,7 +93,7 @@ export function DocumentViewer({
           transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
           lg:translate-x-0 lg:static lg:h-[600px]
         `} >
-          <div className="p-6">
+          <div className="p-6 pt-36 lg:pt-6">
             <div className="mb-6">
               <div className={`w-12 h-12 ${course.color} rounded-xl flex items-center justify-center text-2xl mb-3`}>
                 {course.icon}
@@ -133,18 +144,22 @@ export function DocumentViewer({
               <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
                 {currentSectionData.content.map((block, index) => (
                   <div key={index} className="mb-6 last:mb-0">
+                    {/* PARAGRAPH */}
                     {block.type === 'paragraph' && (
                       <p className="text-gray-700 leading-relaxed mb-4">{block.text}</p>
                     )}
 
+                    {/* HEADING */}
                     {block.type === 'heading' && (
                       <h2 className="text-2xl font-semibold mb-4 mt-8 first:mt-0">{block.text}</h2>
                     )}
 
+                    {/* SUBHEADING */}
                     {block.type === 'subheading' && (
                       <h3 className="text-xl font-semibold mb-3 mt-6">{block.text}</h3>
                     )}
-      {/* ---------------------------- code show on ui ----------------------   */}
+
+                    {/* CODE */}
                     {block.type === 'code' && (
                       <div className="bg-gray-900 rounded-xl overflow-hidden mb-4 text-white">
                         <div className="bg-gray-800 px-4 py-2 text-white text-sm border-b border-gray-700">
@@ -155,7 +170,47 @@ export function DocumentViewer({
                         </pre>
                       </div>
                     )}
-  {/* ------------ image show on ui ---------------------- */}
+
+                    {/* CODEBLOCK - NEW */}
+                    {block.type === 'codeBlock' && (
+                      <div className="bg-gray-900 rounded-xl overflow-hidden mb-4 text-white">
+                        <div className="bg-gray-800 px-4 py-2 text-white text-sm border-b border-gray-700 flex justify-between items-center">
+                          <span>{block.codeLanguage || 'code'}</span>
+                          <button
+                            onClick={() => navigator.clipboard.writeText(block.codeText || '')}
+                            className="text-xs bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded"
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <pre className="p-4 overflow-x-auto">
+                          <code className="text-sm text-gray-100 font-mono">
+                            {block.codeText}
+                          </code>
+                        </pre>
+                      </div>
+                    )}
+
+                    {/* PREFORMATTED - NEW */}
+                    {block.type === 'preformatted' && (
+                      <div
+                        className="rounded-xl overflow-hidden mb-4 p-4"
+                        style={{
+                          backgroundColor: block.backgroundColor || '#f5f5f5',
+                          fontFamily: block.fontFamily || 'monospace',
+                          fontSize: 
+                            block.fontSize === 'small' ? '12px' :
+                            block.fontSize === 'large' ? '16px' :
+                            '14px',
+                        }}
+                      >
+                        <pre className="whitespace-pre-wrap break-words text-gray-800">
+                          {block.rawText}
+                        </pre>
+                      </div>
+                    )}
+
+                    {/* IMAGE */}
                     {block.type === 'image' && block.url && (
                       <div className="my-6">
                         <img
@@ -168,7 +223,8 @@ export function DocumentViewer({
                         )}
                       </div>
                     )}
-    {/* -------------------- video show on ui ---------------------- */}
+
+                    {/* VIDEO */}
                     {block.type === 'video' && block.url && (
                       <div className="my-6">
                         <video controls className="w-full rounded-xl">
@@ -176,22 +232,23 @@ export function DocumentViewer({
                         </video>
                       </div>
                     )}
-    {/* --------------------- table show on ui ---------------------- */}
+
+                    {/* TABLE */}
                     {block.type === 'table' && block.headers && block.rows && (
                       <div className="overflow-x-auto my-6">
                         <table className="w-full border">
                           <thead className="bg-gray-100">
                             <tr>
                               {block.headers.map((h, i) => (
-                                <th key={i} className="p-2 border">{h}</th>
+                                <th key={i} className="p-2 border font-semibold text-left">{h}</th>
                               ))}
                             </tr>
                           </thead>
                           <tbody>
                             {block.rows.map((row, i) => (
-                              <tr key={i}>
+                              <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : ''}>
                                 {row.map((cell, j) => (
-                                  <td key={j} className="p-2 border">{cell}</td>
+                                  <td key={j} className="p-2 border text-gray-700">{cell}</td>
                                 ))}
                               </tr>
                             ))}
@@ -199,20 +256,23 @@ export function DocumentViewer({
                         </table>
                       </div>
                     )}
-    {/* -------------------- quote show on ui ---------------------- */}
+
+                    {/* QUOTE */}
                     {block.type === 'quote' && block.text && (
-                      <blockquote className="border-l-4 border-gray-400 pl-4 italic my-6">
+                      <blockquote className="border-l-4 border-gray-400 pl-4 italic my-6 text-gray-700">
                         "{block.text}"
                         {block.author && (
-                          <div className="text-sm text-gray-500 mt-2">— {block.author}</div>
+                          <div className="text-sm text-gray-500 mt-2 not-italic">— {block.author}</div>
                         )}
                       </blockquote>
                     )}
-      {/* ---------- divider show on ui ---------------------- */}
+
+                    {/* DIVIDER */}
                     {block.type === 'divider' && (
                       <hr className="my-8 border-gray-300" />
                     )}
-      {/* --------------------- list show on ui ----------------------  */}
+
+                    {/* LIST */}
                     {block.type === 'list' && (
                       <ul className="list-disc list-inside space-y-2 mb-4">
                         {block.items?.map((item, i) => (
@@ -220,7 +280,8 @@ export function DocumentViewer({
                         ))}
                       </ul>
                     )}
-      {/* ----------------- note and example show on ui ----------------------   */}
+
+                    {/* NOTE */}
                     {block.type === 'note' && (
                       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-4">
                         <div className="flex items-start gap-2">
@@ -230,6 +291,7 @@ export function DocumentViewer({
                       </div>
                     )}
 
+                    {/* EXAMPLE */}
                     {block.type === 'example' && (
                       <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-4">
                         <div className="font-semibold text-green-800 mb-2">Example:</div>
@@ -239,6 +301,118 @@ export function DocumentViewer({
                             <pre className="p-4 overflow-x-auto">
                               <code className="text-sm text-gray-100 font-mono">{block.code}</code>
                             </pre>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* GRID - NEW */}
+                    {block.type === 'grid' && block.gridItems && (
+                      <div
+                        className="my-6 gap-4"
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: `repeat(auto-fit, minmax(${block.columns === 1 ? '100%' : block.columns === 3 ? '280px' : block.columns === 4 ? '240px' : '300px'}, 1fr))`,
+                        }}
+                      >
+                        {block.gridItems.map((item, idx) => (
+                          <div
+                            key={item.id || idx}
+                            className="rounded-lg p-4 border-2 transition-all hover:shadow-lg"
+                            style={{
+                              borderColor: item.color || '#ddd',
+                              backgroundColor: item.color ? `${item.color}15` : '#f9f9f9',
+                            }}
+                          >
+                            {item.icon && (
+                              <div className="text-3xl mb-2">{item.icon}</div>
+                            )}
+                            <h4 className="font-semibold text-lg mb-2 text-gray-900">
+                              {item.title}
+                            </h4>
+                            <p className="text-gray-700 text-sm mb-2">
+                              {item.description}
+                            </p>
+                            {item.detail && (
+                              <p className="text-gray-600 text-xs mb-3 italic">
+                                {item.detail}
+                              </p>
+                            )}
+                            {item.metadata && (
+                              <div className="text-xs space-y-1 mt-3 pt-3 border-t">
+                                {Object.entries(item.metadata).map(([key, value]) => (
+                                  <div key={key} className="text-gray-600">
+                                    <strong className="text-gray-700">{key}:</strong> {value}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {item.link && (
+                              <a
+                                href={item.link}
+                                className="inline-block mt-3 text-sm font-semibold"
+                                style={{ color: item.color || '#3A10E5' }}
+                              >
+                                Learn more →
+                              </a>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* SECTION - NEW (Collapsible) */}
+                    {block.type === 'section' && (
+                      <div className="my-6 border rounded-lg overflow-hidden">
+                        <button
+                          onClick={() => toggleSection(block.sectionTitle || `section-${index}`)}
+                          className="w-full px-4 py-4 bg-gray-100 hover:bg-gray-200 flex items-center justify-between text-left transition-colors"
+                        >
+                          <h3 className="font-semibold text-lg text-gray-900">
+                            {block.sectionTitle}
+                          </h3>
+                          <ChevronDown
+                            className={`w-5 h-5 transition-transform ${
+                              expandedSections.has(block.sectionTitle || `section-${index}`)
+                                ? 'rotate-180'
+                                : ''
+                            }`}
+                          />
+                        </button>
+                        {(block.isExpanded !== false ||
+                          expandedSections.has(
+                            block.sectionTitle || `section-${index}`
+                          )) && (
+                          <div className="p-4 bg-white">
+                            {block.subsections?.map((subBlock, subIdx) => (
+                              <div key={subIdx} className="mb-4">
+                                {/* Recursively render subsections */}
+                                {subBlock.type === 'paragraph' && (
+                                  <p className="text-gray-700 mb-3">{subBlock.text}</p>
+                                )}
+                                {subBlock.type === 'list' && (
+                                  <ul className="list-disc list-inside space-y-2 mb-3">
+                                    {subBlock.items?.map((item, i) => (
+                                      <li key={i} className="text-gray-700">
+                                        {item}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                                {subBlock.type === 'codeBlock' && (
+                                  <div className="bg-gray-900 rounded-lg overflow-hidden text-white mb-3">
+                                    <div className="bg-gray-800 px-4 py-2 text-sm">
+                                      {subBlock.codeLanguage || 'code'}
+                                    </div>
+                                    <pre className="p-4 overflow-x-auto">
+                                      <code className="text-sm text-gray-100 font-mono">
+                                        {subBlock.codeText}
+                                      </code>
+                                    </pre>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
                           </div>
                         )}
                       </div>
@@ -279,6 +453,6 @@ export function DocumentViewer({
           </div>
         </main>
       </div>
-      </div>
+    </div>
   );
 }

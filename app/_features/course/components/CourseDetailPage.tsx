@@ -18,8 +18,6 @@ type Props = {
 };
 
 export default function CourseDetail({ courseId: propCourseId }: Props) {
-  // const { courseId } = useParams<{ courseId: string }>();
-  // const course = courseId ? coursesData[courseId] : null;
    const courseId = propCourseId;
   const course = coursesData?.[courseId as string] ?? null;
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
