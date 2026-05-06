@@ -40,25 +40,21 @@ export interface ContentBlock {
   author?: string;
 
   // ========== NEW: codeBlock ==========
-  // Pre-formatted code with syntax highlighting
   codeText?: string;
   codeLanguage?: string;
-  highlightLines?: number[]; // Line numbers to highlight
+  highlightLines?: number[]; 
 
   // ========== NEW: preformatted ==========
-  // Raw text that preserves spacing (ASCII art, diagrams)
   rawText?: string;
   fontFamily?: 'monospace' | 'serif' | 'sans-serif';
   backgroundColor?: string;
   fontSize?: 'small' | 'medium' | 'large';
 
   // ========== NEW: grid ==========
-  // Multi-column card layout
-  columns?: number; // 1, 2, 3, 4
+  columns?: number; 
   gridItems?: GridItem[];
 
   // ========== NEW: section ==========
-  // Nested section with subsections
   sectionTitle?: string;
   subsections?: ContentBlock[];
   collapsible?: boolean;
@@ -69,10 +65,10 @@ export interface ContentBlock {
 export interface GridItem {
   id?: string;
   title: string;
-  icon?: string; // emoji or icon name
+  icon?: string; 
   description: string;
   detail?: string;
-  color?: string; // hex color
+  color?: string; 
   metadata?: Record<string, string>;
   link?: string;
   imageUrl?: string;

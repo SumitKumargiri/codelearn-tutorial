@@ -44,9 +44,7 @@ export const sqlDatabaseGuide : DocumentContent = {
           type: 'code' as const,
           language: 'sql',
           code: `SELECT users.name, orders.amount
-FROM users
-INNER JOIN orders
-ON users.id = orders.user_id;`
+          FROM users INNER JOIN orders ON users.id = orders.user_id;`
         }
       ]
     }

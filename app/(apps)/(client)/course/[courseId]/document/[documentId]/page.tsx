@@ -1,10 +1,3 @@
-// import { DocumentViewer } from '@/features/course/components/DocumentViewer';
-
-// export default function Page() {
-//   return <DocumentViewer />;
-// }
-
-
 import { DocumentViewer } from '@/features/course/components/DocumentViewer';
 import { coursesData } from '@/features/course/model/course-data';
 
@@ -16,7 +9,7 @@ export async function generateStaticParams() {
       course.documents.forEach((doc) => {
         paths.push({
           courseId,
-          documentId: String(doc.id),
+          documentId: String(doc.id),   
         });
       });
     }

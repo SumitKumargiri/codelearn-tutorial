@@ -218,8 +218,6 @@ export const dotnetSyllabus : DocumentContent = {
             '5. After installation is complete, launch Visual Studio and sign in with your Microsoft account if prompted.'
           ]
         },
-        
-
       ]
     }
   ]

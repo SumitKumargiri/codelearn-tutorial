@@ -9,6 +9,7 @@ import { pythonGuide } from './python/python-programming-1.content';
 import { dotnetSyllabus } from './dotnet/dotnet-1.content';
 import { redisBasics } from './redis/redis-basics.content';
 import { tsBasicTypes } from './typescript/basic-types-2.content';
+import { htmlSyllabus } from './html/html-1.content';
 
 export const documentContents: DocumentRecord = {
   //------ javascript contents ---------
@@ -28,5 +29,6 @@ export const documentContents: DocumentRecord = {
   //------ .NET contents ---------
   'dotnet-development-1': dotnetSyllabus,
   
-  'redis-1': redisBasics
+  'redis-1': redisBasics,
+  "html-css-complete-1": htmlSyllabus
 };

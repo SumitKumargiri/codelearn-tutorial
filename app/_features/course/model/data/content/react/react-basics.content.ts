@@ -5,7 +5,7 @@ export const reactBasics: DocumentContent = {
   description: 'Introduction to React and core concepts',
   sections: [
     {
-      title: 'What is React?',
+      title: 'Overview',
       content: [
         {
           type: 'paragraph',

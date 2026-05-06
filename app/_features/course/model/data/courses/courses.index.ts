@@ -8,6 +8,7 @@ import { nodejsExpress } from './nodejs/nodejs.course';
 import { sqlDatabase } from './sql/sql.course';
 import { dotnetDevelopment } from './dotnet/dotnetDevelopment';
 import { redisCourse } from './redis/redis-course.data';
+import { htmlCourse } from './html/html.course';
 
 export const coursesData: Record<string, CourseData> = {
   'javascript-fundamentals': javascriptFundamentals,
@@ -17,5 +18,6 @@ export const coursesData: Record<string, CourseData> = {
   'nodejs-express': nodejsExpress,
   'sql-database': sqlDatabase,
   'dotnet-development': dotnetDevelopment,
-  'redis': redisCourse
+  'redis': redisCourse,
+  'html-css-complete': htmlCourse
 };

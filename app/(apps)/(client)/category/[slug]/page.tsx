@@ -1,11 +1,4 @@
-﻿// import CategoryPage from "@/features/category/components/CategoryPage";
-
-// export default function Page() {
-//   return <CategoryPage />;
-// }
-
-
-import CategoryPage from "@/features/category/components/CategoryPage";
+﻿import CategoryPage from "@/features/category/components/CategoryPage";
 import { categoryData } from "@/features/category/model/category-data";
 
 export async function generateStaticParams() {

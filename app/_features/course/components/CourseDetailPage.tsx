@@ -52,7 +52,6 @@ export default function CourseDetail({ courseId: propCourseId }: Props) {
       console.log = (...args: unknown[]) => {
         logs.push(args.map((x) => String(x)).join(' '));
       };
-      // eslint-disable-next-line react-hooks/unsupported-syntax
       eval(code);
       console.log = originalLog;
       setOutput(logs.join('\n') || 'Code executed successfully');
