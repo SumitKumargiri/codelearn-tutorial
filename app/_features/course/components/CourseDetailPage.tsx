@@ -18,8 +18,6 @@ type Props = {
 };
 
 export default function CourseDetail({ courseId: propCourseId }: Props) {
-  // const { courseId } = useParams<{ courseId: string }>();
-  // const course = courseId ? coursesData[courseId] : null;
    const courseId = propCourseId;
   const course = coursesData?.[courseId as string] ?? null;
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
@@ -54,7 +52,6 @@ export default function CourseDetail({ courseId: propCourseId }: Props) {
       console.log = (...args: unknown[]) => {
         logs.push(args.map((x) => String(x)).join(' '));
       };
-      // eslint-disable-next-line react-hooks/unsupported-syntax
       eval(code);
       console.log = originalLog;
       setOutput(logs.join('\n') || 'Code executed successfully');
