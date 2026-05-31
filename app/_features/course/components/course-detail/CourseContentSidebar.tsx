@@ -23,6 +23,7 @@ export function CourseContentSidebar({
     <div className="bg-white rounded-2xl shadow-sm p-6 sticky top-24">
       <h2 className="text-2xl mb-4">Course Content</h2>
       <p className="text-gray-600 mb-4">{totalLessons} lessons</p>
+      
 
       <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
         {modules.map((module) => (

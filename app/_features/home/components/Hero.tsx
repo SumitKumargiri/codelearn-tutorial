@@ -1,62 +1,136 @@
 "use client";
-
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import { HeroOverlay } from "./3d/HeroOverlay";
-
-// Dynamic import for Canvas to avoid SSR issues
-const Canvas3D = dynamic(() => import("./3d/Canvas3D").then((mod) => ({ default: mod.Canvas3D })), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="w-12 h-12 border-4 border-[#3A10E5]/30 border-t-[#3A10E5] rounded-full animate-spin" />
-    </div>
-  ),
-});
+import { ImageWithFallback } from '@/shared/figma/ImageWithFallback';
+import { ArrowRight, BookOpen, Code2, Rocket, Sparkles } from 'lucide-react';
+import hero from "@/public/Heosection2.png";
 
 export function Hero() {
-  const handleCtaClick = () => {
-    // Navigate to courses or trigger signup
-    window.location.href = "/catalog";
-  };
-
   return (
-    <section className="relative w-full h-screen min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#10162F] via-[#1A1F3A] to-[#10162F]" />
+      <section className="bg-gradient-to-br from-[#10162F] via-[#1A1F3A] to-[#10162F] text-white px-6 py-2 grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <div className="inline-flex items-center px-5 py-2 rounded-xl  text-indigo-700 font-semibold mb-8">
+            Learn. Code. Grow.
+          </div>
 
-      {/* Animated background blobs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#3A10E5] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FFD300] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#5B21B6] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight text-[#091540]">
+            Learn to Code.
+            <br />
+            <span className="text-indigo-500">Build Your Future.</span>
+          </h1>
 
-      {/* 3D Canvas - spans full screen */}
-      <div className="absolute inset-0 z-0">
-        <Suspense
-          fallback={
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="w-16 h-16 border-4 border-[#3A10E5]/30 border-t-[#3A10E5] rounded-full animate-spin" />
+          <p className="mt-8 text-xl text-slate-600 leading-9 max-w-2xl">
+            CodeLearn Tutorial is your free resource for learning
+            programming from basics to advanced with practical examples,
+            real-world projects, and developer-focused learning.
+          </p>
+
+          {/* Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+            
+            <div className="flex gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center">
+                <BookOpen className="text-indigo-600 w-7 h-7" />
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg text-[#091540]">
+                  Beginner Friendly
+                </h3>
+
+                <p className="text-slate-500 mt-2">
+                  Step-by-step tutorials for everyone
+                </p>
+              </div>
             </div>
-          }
-        >
-          <Canvas3D scale={2.5} />
-        </Suspense>
-      </div>
 
-      {/* UI Overlay */}
-      <div className="relative z-10 w-full h-full">
-        <HeroOverlay onCtaClick={handleCtaClick} />
-      </div>
+            <div className="flex gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center">
+                <Code2 className="text-indigo-600 w-7 h-7" />
+              </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-pulse">
-        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-white/40 rounded-full animate-bounce" />
+              <div>
+                <h3 className="font-bold text-lg text-[#091540]">
+                  Hands-on Code
+                </h3>
+
+                <p className="text-slate-500 mt-2">
+                  Practice with real code examples
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center">
+                <Rocket className="text-indigo-600 w-7 h-7" />
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg text-[#091540]">
+                  Build Projects
+                </h3>
+
+                <p className="text-slate-500 mt-2">
+                  Apply your skills with real-world projects
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-6 mt-14">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 shadow-lg">
+              Explore Tutorials →
+            </button>
+
+            <button className="border-2 border-indigo-300 hover:bg-indigo-50 text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300">
+              View Courses
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-slate-100">
+            
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                100+
+              </h2>
+              <p className="text-slate-500 mt-3">Tutorials</p>
+            </div>
+
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                20+
+              </h2>
+              <p className="text-slate-500 mt-3">Courses</p>
+            </div>
+
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                50+
+              </h2>
+              <p className="text-slate-500 mt-3">Projects</p>
+            </div>
+
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                10K+
+              </h2>
+              <p className="text-slate-500 mt-3">Learners</p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#10162F]/50 z-5 pointer-events-none" />
-    </section>
+        {/* Right Side Image */}
+        <div className="relative flex justify-center">
+          <ImageWithFallback
+             src={hero.src}
+            alt="CodeLearn Banner"
+            width={800}
+            height={700}
+            className="w-full max-w-3xl object-contain drop-shadow-2xl"
+            // priority
+          />
+        </div>
+      </section>
   );
 }
