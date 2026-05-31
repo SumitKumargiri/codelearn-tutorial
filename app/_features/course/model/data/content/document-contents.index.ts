@@ -27,5 +27,6 @@ export const documentContents: DocumentRecord = {
   'python-programming-1': pythonGuide,
   //------ .NET contents ---------
   'dotnet-development-1': dotnetSyllabus,
+  
   'redis-1': redisBasics
 };
