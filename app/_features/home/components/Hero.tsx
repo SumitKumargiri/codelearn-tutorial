@@ -1,95 +1,136 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+"use client";
+import { ImageWithFallback } from '@/shared/figma/ImageWithFallback';
+import { ArrowRight, BookOpen, Code2, Rocket, Sparkles } from 'lucide-react';
+import hero from "@/public/Heosection2.png";
 
 export function Hero() {
   return (
-    <section className="bg-gradient-to-br from-[#10162F] via-[#1A1F3A] to-[#10162F] text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-[#3A10E5]/20 border border-[#3A10E5]/30 rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-[#FFD300]" />
-              <span className="text-sm">Learn by doing with hands-on projects</span>
+      <section className="bg-gradient-to-br from-[#10162F] via-[#1A1F3A] to-[#10162F] text-white px-6 py-2 grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <div className="inline-flex items-center px-5 py-2 rounded-xl  text-indigo-700 font-semibold mb-8">
+            Learn. Code. Grow.
+          </div>
+
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight text-[#091540]">
+            Learn to Code.
+            <br />
+            <span className="text-indigo-500">Build Your Future.</span>
+          </h1>
+
+          <p className="mt-8 text-xl text-slate-600 leading-9 max-w-2xl">
+            CodeLearn Tutorial is your free resource for learning
+            programming from basics to advanced with practical examples,
+            real-world projects, and developer-focused learning.
+          </p>
+
+          {/* Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+            
+            <div className="flex gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center">
+                <BookOpen className="text-indigo-600 w-7 h-7" />
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg text-[#091540]">
+                  Beginner Friendly
+                </h3>
+
+                <p className="text-slate-500 mt-2">
+                  Step-by-step tutorials for everyone
+                </p>
+              </div>
             </div>
 
-            <h1 className="text-5xl lg:text-6xl mb-6">
-              Learn JavaScript from scratch
-            </h1>
+            <div className="flex gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center">
+                <Code2 className="text-indigo-600 w-7 h-7" />
+              </div>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Master the fundamentals of JavaScript through interactive lessons,
-              real-world projects, and personalized guidance. Start coding in minutes.
-            </p>
+              <div>
+                <h3 className="font-bold text-lg text-[#091540]">
+                  Hands-on Code
+                </h3>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#3A10E5] hover:bg-[#3A10E5]/90 px-8 py-4 rounded-lg flex items-center justify-center gap-2 transition-all hover:scale-105">
-                Start Learning - It&apos;s Free
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="border border-white/30 hover:bg-white/10 px-8 py-4 rounded-lg transition-colors">
-                View Course Syllabus
-              </button>
+                <p className="text-slate-500 mt-2">
+                  Practice with real code examples
+                </p>
+              </div>
             </div>
 
-            <div className="flex items-center gap-8 mt-8 text-sm">
-              <div>
-                <div className="text-2xl font-semibold text-[#FFD300]">50M+</div>
-                <div className="text-gray-400">Learners</div>
+            <div className="flex gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center">
+                <Rocket className="text-indigo-600 w-7 h-7" />
               </div>
+
               <div>
-                <div className="text-2xl font-semibold text-[#FFD300]">190+</div>
-                <div className="text-gray-400">Countries</div>
-              </div>
-              <div>
-                <div className="text-2xl font-semibold text-[#FFD300]">5000+</div>
-                <div className="text-gray-400">Companies</div>
+                <h3 className="font-bold text-lg text-[#091540]">
+                  Build Projects
+                </h3>
+
+                <p className="text-slate-500 mt-2">
+                  Apply your skills with real-world projects
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="relative hidden lg:block">
-            <div className="bg-[#1E1E2E] rounded-2xl p-6 shadow-2xl border border-white/10">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-6 mt-14">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 shadow-lg">
+              Explore Tutorials →
+            </button>
 
-              <div className="font-mono text-sm space-y-2">
-                <div className="text-purple-400">{'// Your first JavaScript program'}</div>
-                <div>
-                  <span className="text-pink-400">function</span>{' '}
-                  <span className="text-yellow-300">greet</span>
-                  <span className="text-white">() {'{'}</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-pink-400">const</span>{' '}
-                  <span className="text-white">message</span>{' '}
-                  <span className="text-pink-400">=</span>{' '}
-                  <span className="text-green-400">&quot;Hello, World!&quot;</span>
-                  <span className="text-white">;</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-blue-400">console</span>
-                  <span className="text-white">.</span>
-                  <span className="text-yellow-300">log</span>
-                  <span className="text-white">(message);</span>
-                </div>
-                <div>
-                  <span className="text-white">{'}'}</span>
-                </div>
-                <div className="mt-4">
-                  <span className="text-yellow-300">greet</span>
-                  <span className="text-white">();</span>
-                </div>
-                <div className="mt-4 text-green-400">{'> Hello, World!'}</div>
-              </div>
+            <button className="border-2 border-indigo-300 hover:bg-indigo-50 text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300">
+              View Courses
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-slate-100">
+            
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                100+
+              </h2>
+              <p className="text-slate-500 mt-3">Tutorials</p>
             </div>
 
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#3A10E5] rounded-full blur-3xl opacity-50"></div>
-            <div className="absolute -top-4 -left-4 w-32 h-32 bg-[#FFD300] rounded-full blur-3xl opacity-30"></div>
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                20+
+              </h2>
+              <p className="text-slate-500 mt-3">Courses</p>
+            </div>
+
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                50+
+              </h2>
+              <p className="text-slate-500 mt-3">Projects</p>
+            </div>
+
+            <div>
+              <h2 className="text-5xl font-bold text-indigo-600">
+                10K+
+              </h2>
+              <p className="text-slate-500 mt-3">Learners</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        {/* Right Side Image */}
+        <div className="relative flex justify-center">
+          <ImageWithFallback
+             src={hero.src}
+            alt="CodeLearn Banner"
+            width={800}
+            height={700}
+            className="w-full max-w-3xl object-contain drop-shadow-2xl"
+            // priority
+          />
+        </div>
+      </section>
   );
 }
