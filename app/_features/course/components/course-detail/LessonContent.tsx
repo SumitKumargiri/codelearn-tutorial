@@ -104,30 +104,6 @@ export function LessonContent({
           </div>
         )}
 
-        {/* {selectedLesson.type === "quiz" && (
-          <div className="space-y-6">
-            <div className="p-6 bg-blue-50 border border-blue-200 rounded-xl">
-              <h3 className="font-semibold mb-4">Quiz Question 1:</h3>
-              <p className="mb-4">What is the correct way to declare a variable in JavaScript?</p>
-              <div className="space-y-2">
-                {[
-                  'let name = "John";',
-                  'variable name = "John";',
-                  'var := "John";',
-                  'declare name = "John";',
-                ].map((option, i) => (
-                  <button
-                    key={i}
-                    className="w-full text-left p-3 border border-gray-300 rounded-lg hover:border-[#3A10E5] hover:bg-white transition-colors"
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        )} */}
-
         {selectedLesson.type === "quiz" && (
           <div className="space-y-6">
             <div className="p-6 bg-blue-50 border border-blue-200 rounded-xl">

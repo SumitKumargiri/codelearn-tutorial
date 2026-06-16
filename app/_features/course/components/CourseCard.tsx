@@ -50,22 +50,6 @@ export function CourseCard({ course }: CourseCardProps) {
           </span>
         </div>
 
-        {/* Progress Bar (if exists) */}
-        {/* {course.progress !== undefined && (
-          <div className="mb-4">
-            <div className="flex items-center justify-between text-sm mb-2">
-              <span className="text-gray-600">Progress</span>
-              <span className="font-medium text-[#3A10E5]">{course.progress}%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-[#3A10E5] to-[#6C5CE7] h-full rounded-full transition-all duration-500"
-                style={{ width: `${course.progress}%` }}
-              ></div>
-            </div>
-          </div>
-        )} */}
-
         {/* Action Button */}
         <div className="w-full bg-[#3A10E5] hover:bg-[#3A10E5]/90 text-white py-3 rounded-lg transition-all group-hover:scale-105 text-center">
           {course.progress !== undefined && course.progress > 0 ? 'Continue Learning' : 'Start Course'}

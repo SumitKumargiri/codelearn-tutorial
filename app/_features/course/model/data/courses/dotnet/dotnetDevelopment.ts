@@ -24,11 +24,11 @@ export const dotnetDevelopment: CourseData = {
   documents: [
     {
       id: 1,
-      title: '.NET Course Syllabus',
+      title: 'Basics of .NET',
       type: 'pdf',
       size: '3.0 MB',
       downloadUrl: '#',
-      description: 'Complete course structure and roadmap'
+      description: 'Covers fundamentals of .NET including runtime, architecture, and key components'
     },
     {
       id: 2,
